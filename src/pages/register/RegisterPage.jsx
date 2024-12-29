@@ -2,15 +2,27 @@ import { Link } from "react-router-dom";
 import userAuth from "../../hooks/userAuth";
 
 const RegisterPage = () => {
-  const { resiterUser } = userAuth();
+  const { resiterUser, updateUserProfile, setEffectToggle, effectToggle } =
+    userAuth();
   const handleRegisterForm = (e) => {
     e.preventDefault();
     const data = e.target.name.value;
     const form = new FormData(e.target);
     const formData = Object.fromEntries(form.entries());
+    const userInfoa = {
+      displayName: formData.name,
+      photoURL: formData.photoUrl,
+    };
+    console.log(userInfoa);
     resiterUser(formData.email, formData.password)
-      .then((result) => {
-        console.log(result.user);
+      .then(() => {
+        updateUserProfile(userInfoa)
+          .then(() => {
+            setEffectToggle(!effectToggle);
+          })
+          .catch((error) => {
+            console.log(error.message);
+          });
       })
       .catch((error) => {
         console.log(error.message);

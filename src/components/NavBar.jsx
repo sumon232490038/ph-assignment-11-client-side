@@ -5,9 +5,11 @@ import { useContext } from "react";
 import { GlobalContext } from "../provider/Contexts";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { Tooltip as ReactTooltip } from "react-tooltip";
+import userAuth from "../hooks/userAuth";
 
 const NavBar = () => {
   const { theme, setTheme } = useContext(GlobalContext);
+  const { user } = userAuth();
 
   const handleTheme = () => {
     setTheme(!theme);
@@ -77,14 +79,16 @@ const NavBar = () => {
               </>
             )}
           </button>
-          <div className=" w-8 h-10 lg:mr-2  lg:h-10 lg:w-10 items-center flex  ">
-            <img
-              data-tooltip-id="my-tooltip"
-              data-tooltip-content="bangladesh"
-              className={`"rounded-md w-10" `}
-              src="https://lh3.googleusercontent.com/a/ACg8ocJekpeC2a0YWVRJ8uET27mFL8ceZz79k1yQaaZphv5u61K_JXDc=s96-c"
-            />
-          </div>
+          {user && (
+            <div className=" w-10 h-10 lg:mr-2 hidden lg:block lg:h-10 lg:w-10 items-center   ">
+              <img
+                data-tooltip-id="my-tooltip"
+                data-tooltip-content="bangladesh"
+                className={`rounded-xm  h-full `}
+                src={user?.photoURL}
+              />
+            </div>
+          )}
           <div className="items-center flex-shrink-0 hidden lg:flex">
             <Link to={`/register`}>
               {" "}
@@ -100,7 +104,7 @@ const NavBar = () => {
             </Link>
           </div>
 
-          <div className="dropdown dropdown-bottom dropdown-end">
+          <div className="dropdown dropdown-bottom dropdown-end ">
             <button className="p-2 lg:hidden ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -119,8 +123,19 @@ const NavBar = () => {
             </button>
             <ul
               tabIndex={0}
-              className="dropdown-content gap-2 menu border dark:bg-black mt-5 z-[1] w-52 p-2 shadow"
+              className="dropdown-content gap-2 bg-white menu border dark:bg-black mt-5 z-[1] w-52 p-2 shadow"
             >
+              {
+                <div className="flex items-center gap-1 border-b pb-2">
+                  <img
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content="bangladesh"
+                    className={`rounded-md w-10 h-full `}
+                    src={user?.photoURL}
+                  />
+                  <p className="text-xs">{user?.displayName}</p>
+                </div>
+              }
               <NavLink>Home</NavLink>
               <NavLink>Find tutors</NavLink>
               <NavLink>Add Tutorials</NavLink>

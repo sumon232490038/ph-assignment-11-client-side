@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 const RootLayout = () => {
   const { theme } = useContext(GlobalContext);
   return (
-    <body className={`${theme && "dark"} mx-auto`}>
+    <div className={`${theme && "dark"} mx-auto`}>
       <div className="dark:bg-black   dark:text-white">
         <nav className="p-2">
           <NavBar></NavBar>
@@ -19,7 +19,7 @@ const RootLayout = () => {
           <FooterLayout></FooterLayout>
         </footer>
       </div>
-    </body>
+    </div>
   );
 };
 
