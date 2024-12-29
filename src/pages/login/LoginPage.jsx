@@ -1,9 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import userAuth from "../../hooks/userAuth";
 import Swal from "sweetalert2";
 const LoginPage = () => {
-  const { userLogin, setEfectToggle, effectToggle, signInAndsignUpByGoogle } =
-    userAuth();
+  const {
+    userLogin,
+    setEfectToggle,
+    effectToggle,
+    signInAndsignUpByGoogle,
+    loader,
+    setLoader,
+  } = userAuth();
+  const Navigate = useNavigate();
+  const location = useLocation();
+  const backPrev = location?.state || "/";
   const handleLoginFrom = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -16,11 +25,15 @@ const LoginPage = () => {
     userLogin(formData.email, formData.password)
       .then(() => {
         setEfectToggle(!effectToggle);
-        Swal.fire({
-          title: "Good job!",
-          text: "Your Login Successfull!",
-          icon: "success",
-        });
+        Swal.fire(
+          {
+            title: "Good job!",
+            text: "Your Login Successfull!",
+            icon: "success",
+          },
+          Navigate(backPrev)
+        );
+        setLoader(true);
       })
       .catch((error) => {
         {
@@ -43,6 +56,8 @@ const LoginPage = () => {
           text: "Your Login Successfull By Google!",
           icon: "success",
         });
+        Navigate(backPrev);
+        setLoader(true);
       })
       .catch((error) => {
         Swal.fire({

@@ -9,6 +9,8 @@ const RegisterPage = () => {
     setEfectToggle,
     effectToggle,
     signInAndsignUpByGoogle,
+    loader,
+    setLoader,
   } = userAuth();
   const handleRegisterForm = (e) => {
     e.preventDefault();
@@ -29,6 +31,7 @@ const RegisterPage = () => {
               text: "Your Registration Successfull!",
               icon: "success",
             });
+            setLoader(true);
           })
           .catch((error) => {
             Swal.fire({
@@ -57,6 +60,7 @@ const RegisterPage = () => {
           text: "Your Registration Successfull By Google!",
           icon: "success",
         });
+        setLoader(true);
       })
       .catch((error) => {
         Swal.fire({

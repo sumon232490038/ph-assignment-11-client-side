@@ -22,30 +22,30 @@ const AuthProvider = ({ children }) => {
   };
 
   const signInAndsignUpByGoogle = () => {
-    setLoader(false);
+    setLoader(true);
     return signInWithPopup(auth, provider);
   };
 
   const updateUserProfile = (userInfo) => {
-    setLoader(false);
+    setLoader(true);
 
     return updateProfile(auth.currentUser, userInfo);
   };
   const userLogOut = () => {
-    setLoader(false);
+    setLoader(true);
 
     return signOut(auth);
   };
 
   const userLogin = (email, password) => {
-    setLoader(false);
+    setLoader(true);
 
     return signInWithEmailAndPassword(auth, email, password);
   };
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoader(false);
+      setLoader(true);
     });
     return () => {
       unSubscribe();
@@ -61,6 +61,8 @@ const AuthProvider = ({ children }) => {
     userLogOut,
     userLogin,
     signInAndsignUpByGoogle,
+    loader,
+    setLoader,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
