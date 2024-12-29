@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+.active {
+  border-bottom: 1px solid white;
+  font-weight: 500;
+  text-decoration: underline;
+} */
+
+#htmlRoot {
+  background-color: black;
+  color: white;
+}
