@@ -6,7 +6,6 @@ const RegisterPage = () => {
     userAuth();
   const handleRegisterForm = (e) => {
     e.preventDefault();
-    const data = e.target.name.value;
     const form = new FormData(e.target);
     const formData = Object.fromEntries(form.entries());
     const userInfoa = {

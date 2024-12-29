@@ -1,5 +1,24 @@
 import { Link } from "react-router-dom";
+import userAuth from "../../hooks/userAuth";
 const LoginPage = () => {
+  const { userLogin, setEffectToggle, effectToggle } = userAuth();
+  const handleLoginFrom = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const formData = Object.fromEntries(form.entries());
+    const userInfoa = {
+      displayName: formData.name,
+      photoURL: formData.photoUrl,
+    };
+    console.log(userInfoa);
+    userLogin(formData.email, formData.password)
+      .then(() => {
+        setEffectToggle(!effectToggle);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <div className="mx-auto p-5 my-10">
       <div className="w-full mx-auto max-w-md p-4 rounded-md shadow sm:p-8 bg-black dark:bg-gray-50 text-white dark:text-black">
@@ -16,7 +35,7 @@ const LoginPage = () => {
           <button
             aria-label="Login with Google"
             type="button"
-            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 "
+            className="flex items-center justify-center w-full p-4 space-x-4 border border-white dark:border-black rounded-md focus:ring-2 "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +52,7 @@ const LoginPage = () => {
           <p className="px-3 text-white dark:text-black">OR</p>
           <hr className="w-full text-white dark:text-black" />
         </div>
-        <form noValidate="" action="" className="space-y-8">
+        <form onSubmit={handleLoginFrom} className="space-y-8">
           <div className="space-y-4">
             <div className="space-y-2">
               <label htmlFor="email" className="block text-sm">
@@ -42,7 +61,7 @@ const LoginPage = () => {
               <input
                 type="email"
                 name="email"
-                id="email"
+                required
                 placeholder="leroy@jenkins.com"
                 className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
@@ -63,16 +82,13 @@ const LoginPage = () => {
               <input
                 type="password"
                 name="password"
-                id="password"
+                required
                 placeholder="*****"
                 className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
             </div>
           </div>
-          <button
-            type="button"
-            className="w-full px-8 py-3 font-semibold rounded-md bg-black hover:bg-white hover:text-black hover:border-white border dark:bg-black dark:hover:bg-white dark:hover:border-black dark:hover:text-black text-white dark:text-white"
-          >
+          <button className="w-full px-8 py-3 font-semibold rounded-md bg-black hover:bg-white hover:text-black hover:border-white border dark:bg-black dark:hover:bg-white dark:hover:border-black dark:hover:text-black text-white dark:text-white">
             Sign in
           </button>
         </form>
