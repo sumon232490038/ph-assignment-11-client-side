@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const RegisterPage = () => {
   return (
     <div className="mx-auto p-5 my-20">
@@ -5,15 +7,11 @@ const RegisterPage = () => {
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Register to your account
         </h2>
-        <p className="text-sm text-center text-gray-400 dark:text-gray-600">
+        <p className="text-sm text-center text-white dark:text-black">
           Already Have An Account ?
-          <a
-            href="#"
-            rel="noopener noreferrer"
-            className="focus:underline hover:underline"
-          >
+          <Link to={`/login`} className="focus:underline hover:underline">
             Log in here
-          </a>
+          </Link>
         </p>
         <div className="my-6 space-y-4">
           <button
@@ -32,9 +30,9 @@ const RegisterPage = () => {
           </button>
         </div>
         <div className="flex items-center w-full my-4">
-          <hr className="w-full text-gray-400 dark:text-gray-600" />
-          <p className="px-3 text-gray-400 dark:text-gray-600">OR</p>
-          <hr className="w-full text-gray-400 dark:text-gray-600" />
+          <hr className="w-full text-white  dark:text-black" />
+          <p className="px-3 text-white dark:text-black">OR</p>
+          <hr className="w-full text-white dark:text-black" />
         </div>
         <form noValidate="" action="" className="space-y-8">
           <div className="space-y-4">
@@ -47,7 +45,7 @@ const RegisterPage = () => {
                 name="email"
                 id="email"
                 placeholder="Mr. Sumon"
-                className="w-full px-3 py-2 border rounded-md border-gray-700 dark:border-gray-300 bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800 focus:border-amber-400 focus:dark:border-amber-600"
+                className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
             </div>
             <div className="space-y-2">
@@ -59,7 +57,7 @@ const RegisterPage = () => {
                 name="email"
                 id="email"
                 placeholder="Url"
-                className="w-full px-3 py-2 border rounded-md border-gray-700 dark:border-gray-300 bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800 focus:border-amber-400 focus:dark:border-amber-600"
+                className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
             </div>
             <div className="space-y-2">
@@ -71,7 +69,7 @@ const RegisterPage = () => {
                 name="email"
                 id="email"
                 placeholder="leroy@jenkins.com"
-                className="w-full px-3 py-2 border rounded-md border-gray-700 dark:border-gray-300 bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800 focus:border-amber-400 focus:dark:border-amber-600"
+                className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
             </div>
             <div className="space-y-2">
@@ -82,7 +80,7 @@ const RegisterPage = () => {
                 <a
                   rel="noopener noreferrer"
                   href="#"
-                  className="text-xs hover:underline text-gray-400 dark:text-gray-600"
+                  className="text-xs hover:underline text-white dark:text-white"
                 >
                   Forgot password?
                 </a>
@@ -92,13 +90,13 @@ const RegisterPage = () => {
                 name="password"
                 id="password"
                 placeholder="*****"
-                className="w-full px-3 py-2 border rounded-md border-gray-700 dark:border-gray-300 bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800 focus:border-amber-400 focus:dark:border-amber-600"
+                className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
             </div>
           </div>
           <button
             type="button"
-            className="w-full px-8 py-3 font-semibold rounded-md bg-white dark:bg-black text-gray-900 dark:text-gray-50"
+            className="w-full px-8 py-3 font-semibold rounded-md bg-black hover:bg-white hover:text-black hover:border-white border dark:bg-black dark:hover:bg-white dark:hover:border-black dark:hover:text-black text-white dark:text-white"
           >
             Register
           </button>

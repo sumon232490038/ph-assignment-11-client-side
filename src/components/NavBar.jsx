@@ -92,7 +92,7 @@ const NavBar = () => {
                 Register
               </button>
             </Link>
-            <Link>
+            <Link to={`/login`}>
               {" "}
               <button className="px-3 py-2 font-semibold text-black  border  border-black  rounded bg-white">
                 Log in
