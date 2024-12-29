@@ -9,7 +9,7 @@ import userAuth from "../hooks/userAuth";
 
 const NavBar = () => {
   const { theme, setTheme } = useContext(GlobalContext);
-  const { user } = userAuth();
+  const { user, userLogOut } = userAuth();
 
   const handleTheme = () => {
     setTheme(!theme);
@@ -83,25 +83,39 @@ const NavBar = () => {
             <div className=" w-10 h-10 lg:mr-2 hidden lg:block lg:h-10 lg:w-10 items-center   ">
               <img
                 data-tooltip-id="my-tooltip"
-                data-tooltip-content="bangladesh"
+                data-tooltip-content={user?.displayName}
                 className={`rounded-xm  h-full `}
                 src={user?.photoURL}
               />
             </div>
           )}
           <div className="items-center flex-shrink-0 hidden lg:flex">
-            <Link to={`/register`}>
-              {" "}
-              <button className="px-3 py-2 mr-2  font-semibold border  border-black  rounded bg-white  text-black ">
-                Register
-              </button>
-            </Link>
-            <Link to={`/login`}>
-              {" "}
-              <button className="px-3 py-2 font-semibold text-black  border  border-black  rounded bg-white">
-                Log in
-              </button>
-            </Link>
+            {user?.email ? (
+              <>
+                {" "}
+                <button
+                  onClick={() => userLogOut()}
+                  className="px-3 py-2 mr-2  font-semibold border  border-black  rounded bg-white  text-black "
+                >
+                  Log out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link to={`/register`}>
+                  {" "}
+                  <button className="px-3 py-2 mr-2  font-semibold border  border-black  rounded bg-white  text-black ">
+                    Register
+                  </button>
+                </Link>
+                <Link to={`/login`}>
+                  {" "}
+                  <button className="px-3 py-2 font-semibold text-black  border  border-black  rounded bg-white">
+                    Log in
+                  </button>
+                </Link>
+              </>
+            )}
           </div>
 
           <div className="dropdown dropdown-bottom dropdown-end ">
@@ -125,7 +139,7 @@ const NavBar = () => {
               tabIndex={0}
               className="dropdown-content gap-2 bg-white menu border dark:bg-black mt-5 z-[1] w-52 p-2 shadow"
             >
-              {
+              {user && (
                 <div className="flex items-center gap-1 border-b pb-2">
                   <img
                     data-tooltip-id="my-tooltip"
@@ -135,14 +149,23 @@ const NavBar = () => {
                   />
                   <p className="text-xs">{user?.displayName}</p>
                 </div>
-              }
+              )}
               <NavLink>Home</NavLink>
               <NavLink>Find tutors</NavLink>
               <NavLink>Add Tutorials</NavLink>
               <NavLink>My Tutorials</NavLink>
               <NavLink>My booked tutors</NavLink>
-              <NavLink to={"/login"}>Login</NavLink>
-              <NavLink to={`/register`}>Register</NavLink>
+              <NavLink>My booked tutors</NavLink>
+              {user?.email ? (
+                <>
+                  <NavLink>Log out</NavLink>
+                </>
+              ) : (
+                <>
+                  <NavLink to={"/login"}>Login</NavLink>
+                  <NavLink to={`/register`}>Register</NavLink>
+                </>
+              )}
             </ul>
           </div>
           <ReactTooltip id="my-tooltip" place="bottom" />
