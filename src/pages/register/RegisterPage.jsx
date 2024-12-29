@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
 import userAuth from "../../hooks/userAuth";
+import Swal from "sweetalert2";
 
 const RegisterPage = () => {
-  const { resiterUser, updateUserProfile, setEffectToggle, effectToggle } =
-    userAuth();
+  const {
+    resiterUser,
+    updateUserProfile,
+    setEfectToggle,
+    effectToggle,
+    signInAndsignUpByGoogle,
+  } = userAuth();
   const handleRegisterForm = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -17,14 +23,47 @@ const RegisterPage = () => {
       .then(() => {
         updateUserProfile(userInfoa)
           .then(() => {
-            setEffectToggle(!effectToggle);
+            setEfectToggle(!effectToggle);
+            Swal.fire({
+              title: "Good job!",
+              text: "Your Registration Successfull!",
+              icon: "success",
+            });
           })
           .catch((error) => {
-            console.log(error.message);
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: `${error.message}`,
+            });
           });
       })
       .catch((error) => {
-        console.log(error.message);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message}`,
+        });
+      });
+  };
+
+  const handleRegisterByGoogle = (e) => {
+    e.preventDefault();
+    signInAndsignUpByGoogle()
+      .then(() => {
+        setEfectToggle(!effectToggle);
+        Swal.fire({
+          title: "Good job!",
+          text: "Your Registration Successfull By Google!",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message}`,
+        });
       });
   };
   return (
@@ -43,6 +82,7 @@ const RegisterPage = () => {
           <button
             aria-label="Login with Google"
             type="button"
+            onClick={handleRegisterByGoogle}
             className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 dark:border-gray-600 "
           >
             <svg

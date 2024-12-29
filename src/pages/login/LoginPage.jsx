@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import userAuth from "../../hooks/userAuth";
+import Swal from "sweetalert2";
 const LoginPage = () => {
   const { userLogin, setEffectToggle, effectToggle } = userAuth();
   const handleLoginFrom = (e) => {
@@ -14,9 +15,20 @@ const LoginPage = () => {
     userLogin(formData.email, formData.password)
       .then(() => {
         setEffectToggle(!effectToggle);
+        Swal.fire({
+          title: "Good job!",
+          text: "Your Login Successfull!",
+          icon: "success",
+        });
       })
       .catch((error) => {
-        console.log(error.message);
+        {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: `${error.message}`,
+          });
+        }
       });
   };
   return (
