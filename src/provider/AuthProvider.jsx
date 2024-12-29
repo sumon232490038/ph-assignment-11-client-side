@@ -16,29 +16,36 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const [effectToggle, setEfectToggle] = useState(false);
-  // console.log(user);
+  const [loader, setLoader] = useState(true);
   const resiterUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signInAndsignUpByGoogle = () => {
+    setLoader(false);
     return signInWithPopup(auth, provider);
   };
 
   const updateUserProfile = (userInfo) => {
-    console.log(userInfo);
+    setLoader(false);
+
     return updateProfile(auth.currentUser, userInfo);
   };
   const userLogOut = () => {
+    setLoader(false);
+
     return signOut(auth);
   };
 
   const userLogin = (email, password) => {
+    setLoader(false);
+
     return signInWithEmailAndPassword(auth, email, password);
   };
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
+      setLoader(false);
     });
     return () => {
       unSubscribe();

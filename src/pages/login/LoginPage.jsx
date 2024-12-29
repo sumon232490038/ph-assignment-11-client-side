@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import userAuth from "../../hooks/userAuth";
 import Swal from "sweetalert2";
 const LoginPage = () => {
-  const { userLogin, setEffectToggle, effectToggle } = userAuth();
+  const { userLogin, setEfectToggle, effectToggle, signInAndsignUpByGoogle } =
+    userAuth();
   const handleLoginFrom = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -14,7 +15,7 @@ const LoginPage = () => {
     console.log(userInfoa);
     userLogin(formData.email, formData.password)
       .then(() => {
-        setEffectToggle(!effectToggle);
+        setEfectToggle(!effectToggle);
         Swal.fire({
           title: "Good job!",
           text: "Your Login Successfull!",
@@ -29,6 +30,26 @@ const LoginPage = () => {
             text: `${error.message}`,
           });
         }
+      });
+  };
+
+  const handleSignInByGoogle = (e) => {
+    e.preventDefault();
+    signInAndsignUpByGoogle()
+      .then(() => {
+        setEfectToggle(!effectToggle);
+        Swal.fire({
+          title: "Good job!",
+          text: "Your Login Successfull By Google!",
+          icon: "success",
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${error.message}`,
+        });
       });
   };
   return (
@@ -46,7 +67,8 @@ const LoginPage = () => {
         <div className="my-6 space-y-4">
           <button
             aria-label="Login with Google"
-            type="button"
+            // type="button"
+            onClick={handleSignInByGoogle}
             className="flex items-center justify-center w-full p-4 space-x-4 border border-white dark:border-black rounded-md focus:ring-2 "
           >
             <svg
