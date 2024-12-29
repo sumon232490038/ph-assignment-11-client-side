@@ -14,7 +14,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="p-2 bg-white  dark:bg-black  dark:text-white border-2 text-black">
+    <header className="p-2 bg-white  dark:bg-black  dark:text-white border-black  dark:border-white border text-black">
       <div className="container flex justify-between h-12  mx-auto">
         <div className="flex">
           <Link
@@ -63,7 +63,7 @@ const NavBar = () => {
           <button
             onClick={handleTheme}
             id="themeBtn"
-            className="mt-2 md:mt-1 md:mr-2 btn  btn-sm p-0"
+            className=" mx-2 btn  btn-sm p-0"
           >
             {theme ? (
               <>
@@ -77,29 +77,37 @@ const NavBar = () => {
               </>
             )}
           </button>
+          <div className=" w-8 h-10 lg:mr-2  lg:h-10 lg:w-10 items-center flex  ">
+            <img
+              data-tooltip-id="my-tooltip"
+              data-tooltip-content="bangladesh"
+              className={`"rounded-md w-10" `}
+              src="https://lh3.googleusercontent.com/a/ACg8ocJekpeC2a0YWVRJ8uET27mFL8ceZz79k1yQaaZphv5u61K_JXDc=s96-c"
+            />
+          </div>
           <div className="items-center flex-shrink-0 hidden lg:flex">
             <Link>
               {" "}
-              <button className="px-3 py-2 mr-2 font-semibold   rounded bg-white  text-black ">
+              <button className="px-3 py-2 mr-2  font-semibold border  border-black  rounded bg-white  text-black ">
                 Register
               </button>
             </Link>
             <Link>
               {" "}
-              <button className="px-3 py-2 font-semibold text-black  rounded bg-white">
+              <button className="px-3 py-2 font-semibold text-black  border  border-black  rounded bg-white">
                 Log in
               </button>
             </Link>
           </div>
 
           <div className="dropdown dropdown-bottom dropdown-end">
-            <button className="p-4 lg:hidden mt-2">
+            <button className="p-2 lg:hidden ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                className="w-6 h-6 text-black dark:text-white"
+                className="w-10 h-8 text-black dark:text-white"
               >
                 <path
                   strokeLinecap="round"
@@ -120,7 +128,7 @@ const NavBar = () => {
               <NavLink>My booked tutors</NavLink>
             </ul>
           </div>
-          <ReactTooltip id="my-tooltip-1" place="bottom" content={"sumon"} />
+          <ReactTooltip id="my-tooltip" place="bottom" />
         </div>
         {/* end */}
       </div>
