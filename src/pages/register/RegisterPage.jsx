@@ -1,8 +1,23 @@
 import { Link } from "react-router-dom";
+import userAuth from "../../hooks/userAuth";
 
 const RegisterPage = () => {
+  const { resiterUser } = userAuth();
+  const handleRegisterForm = (e) => {
+    e.preventDefault();
+    const data = e.target.name.value;
+    const form = new FormData(e.target);
+    const formData = Object.fromEntries(form.entries());
+    resiterUser(formData.email, formData.password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
-    <div className="mx-auto p-5 my-20">
+    <div className="mx-auto p-5 my-10">
       <div className="w-full mx-auto max-w-md p-4 rounded-md shadow sm:p-8 bg-black dark:bg-gray-50 text-white dark:text-black">
         <h2 className="mb-3 text-3xl font-semibold text-center">
           Register to your account
@@ -17,7 +32,7 @@ const RegisterPage = () => {
           <button
             aria-label="Login with Google"
             type="button"
-            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 dark:border-gray-600 focus:ring-amber-400 focus:dark:ring-amber-600"
+            className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 dark:border-gray-600 "
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -34,17 +49,17 @@ const RegisterPage = () => {
           <p className="px-3 text-white dark:text-black">OR</p>
           <hr className="w-full text-white dark:text-black" />
         </div>
-        <form noValidate="" action="" className="space-y-8">
+        <form onSubmit={handleRegisterForm} className="space-y-8">
           <div className="space-y-4">
             <div className="space-y-2">
               <label htmlFor="email" className="block text-sm">
                 User Name
               </label>
               <input
-                type="email"
-                name="email"
-                id="email"
+                type="name"
+                name="name"
                 placeholder="Mr. Sumon"
+                required
                 className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
             </div>
@@ -53,10 +68,10 @@ const RegisterPage = () => {
                 Photo Url
               </label>
               <input
-                type="email"
-                name="email"
-                id="email"
+                type="url"
+                name="photoUrl"
                 placeholder="Url"
+                required
                 className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
             </div>
@@ -67,8 +82,8 @@ const RegisterPage = () => {
               <input
                 type="email"
                 name="email"
-                id="email"
                 placeholder="leroy@jenkins.com"
+                required
                 className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
             </div>
@@ -88,16 +103,13 @@ const RegisterPage = () => {
               <input
                 type="password"
                 name="password"
-                id="password"
                 placeholder="*****"
+                required
                 className="w-full px-3 py-2 border rounded-md border-white-700 dark:border-black bg-white dark:bg-gray-50 text-black "
               />
             </div>
           </div>
-          <button
-            type="button"
-            className="w-full px-8 py-3 font-semibold rounded-md bg-black hover:bg-white hover:text-black hover:border-white border dark:bg-black dark:hover:bg-white dark:hover:border-black dark:hover:text-black text-white dark:text-white"
-          >
+          <button className="w-full px-8 py-3 font-semibold rounded-md bg-black hover:bg-white hover:text-black hover:border-white border dark:bg-black dark:hover:bg-white dark:hover:border-black dark:hover:text-black text-white dark:text-white">
             Register
           </button>
         </form>

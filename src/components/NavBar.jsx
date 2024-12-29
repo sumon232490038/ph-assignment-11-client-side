@@ -119,13 +119,15 @@ const NavBar = () => {
             </button>
             <ul
               tabIndex={0}
-              className="dropdown-content gap-2 menu border dark:bg-black mt-2 z-[1] w-52 p-2 shadow"
+              className="dropdown-content gap-2 menu border dark:bg-black mt-5 z-[1] w-52 p-2 shadow"
             >
               <NavLink>Home</NavLink>
               <NavLink>Find tutors</NavLink>
               <NavLink>Add Tutorials</NavLink>
               <NavLink>My Tutorials</NavLink>
               <NavLink>My booked tutors</NavLink>
+              <NavLink to={"/login"}>Login</NavLink>
+              <NavLink to={`/register`}>Register</NavLink>
             </ul>
           </div>
           <ReactTooltip id="my-tooltip" place="bottom" />
