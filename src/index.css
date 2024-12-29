@@ -8,7 +8,7 @@
   text-decoration: underline;
 } */
 
-#htmlRoot {
-  background-color: black;
-  color: white;
+.hoverA a:hover {
+  font-style: oblique;
+  font-weight: 700;
 }
