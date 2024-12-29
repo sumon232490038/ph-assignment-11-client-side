@@ -151,7 +151,7 @@ const FooterLayout = () => {
                   />
                   Bangladesh
                 </p>
-                <p>Solmiad,Dhalibari,Vatara,Gulshan,Dhaka-1212</p>
+                <p>Solmiad,Vatara,Gulshan,Dhaka-1212</p>
 
                 <p className="lowercase">
                   <span className="capitalize">Email:</span>{" "}
@@ -212,10 +212,11 @@ const FooterLayout = () => {
             <h2 className=" font-bold text-2xl uppercase ">Apps</h2>
             <div className="flex flex-col space-y-2 capitalize hoverA text-sm underline underline-offset-1 ">
               <a rel="noopener noreferrer" href="#"></a>
-              <div className="flex gap-2">
+              <div className="flex gap-2 flex-col md:flex-row">
                 <img
                   src="https://static.preply.com/static/ssr/_next/static/images/app_store_badge_en-79b8b5a578eb1f4d7bf116fad64f53e6.svg"
                   alt=""
+                  className="w-[100px]"
                 />
                 <img
                   src="https://static.preply.com/static/ssr/_next/static/images/google_play_badge_en-99874120ff7b66206b0188ae0e2801ac.png"
@@ -371,12 +372,14 @@ const FooterLayout = () => {
           </div>
           <div className="flex flex-col space-y-4">
             <div className="mt-1"></div>
-            <div className="flex flex-col md:flex-row   gap-2 space-y-2 capitalize hoverA text-sm underline  ">
-              <a rel="noopener noreferrer" href="#" className="mt-2">
-                Legel Center
-              </a>
-              <a rel="noopener noreferrer" href="#">
-                privacy policy
+            <div className="flex items-center  md:flex-row   space-y-2 capitalize hoverA text-sm   ">
+              <a
+                rel="noopener noreferrer"
+                href="#"
+                className=" flex  md:gap-5 gap-2"
+              >
+                <span className="underline">Legel Center</span>{" "}
+                <span className="underline"> privacy policy</span>
               </a>
             </div>
           </div>
