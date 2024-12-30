@@ -34,27 +34,36 @@ const NavBar = () => {
           </Link>
           <ul className="items-stretch hidden space-x-3 lg:flex">
             <li className="flex">
-              <NavLink className="flex items-center px-3 -mb-1  dark:border-">
+              <NavLink
+                to={`/`}
+                className="flex items-center px-3 -mb-1 hover:underline  dark:border-"
+              >
                 Home
               </NavLink>
             </li>
             <li className="flex">
-              <NavLink className="flex items-center px-3 -mb-1  dark:border- ">
+              <NavLink
+                to={`/findTutor`}
+                className="flex items-center px-3 -mb-1 hover:underline  dark:border- "
+              >
                 Find tutors
               </NavLink>
             </li>
             <li className="flex">
-              <NavLink className="flex items-center px-3 -mb-1  dark:border-">
+              <NavLink
+                to={`/addTutrials`}
+                className="flex items-center px-3 -mb-1 hover:underline  dark:border-"
+              >
                 Add Tutorials
               </NavLink>
             </li>
             <li className="flex">
-              <NavLink className="flex items-center px-3 -mb-1  dark:border-">
+              <NavLink className="flex items-center px-3 -mb-1 hover:underline  dark:border-">
                 My Tutorials
               </NavLink>
             </li>
             <li className="flex">
-              <NavLink className="flex items-center px-3 -mb-1  dark:border-">
+              <NavLink className="flex items-center px-3 -mb-1 hover:underline  dark:border-">
                 My booked tutors
               </NavLink>
             </li>
@@ -150,9 +159,9 @@ const NavBar = () => {
                   <p className="text-xs">{user?.displayName}</p>
                 </div>
               )}
-              <NavLink>Home</NavLink>
-              <NavLink>Find tutors</NavLink>
-              <NavLink>Add Tutorials</NavLink>
+              <NavLink to={`/`}>Home</NavLink>
+              <NavLink to={`/findTutor`}>Find tutors</NavLink>
+              <NavLink to={`/addTutrials`}>Add Tutorials</NavLink>
               <NavLink>My Tutorials</NavLink>
               <NavLink>My booked tutors</NavLink>
               <NavLink>My booked tutors</NavLink>

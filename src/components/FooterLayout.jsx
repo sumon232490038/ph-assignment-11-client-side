@@ -367,19 +367,20 @@ const FooterLayout = () => {
                 alt=""
                 className="rounded-md dark:border"
               />{" "}
-              <h1 className="ml-2 font-black text-xl">TutorXpress</h1>
+              <h1 className="ml-2 font-black md:text-xl">TutorXpress</h1>
             </Link>
           </div>
+          <div className="hidden md:block lg:hidden"></div>
           <div className="flex flex-col space-y-4">
             <div className="mt-1"></div>
             <div className="flex items-center  md:flex-row   space-y-2 capitalize hoverA text-sm   ">
               <a
                 rel="noopener noreferrer"
                 href="#"
-                className=" flex  md:gap-5 gap-2"
+                className=" flex  md:gap-5 gap-3 justify-between"
               >
-                <span className="underline">Legel Center</span>{" "}
-                <span className="underline"> privacy policy</span>
+                <span className="underline">LegelCenter</span>
+                <span className="underline"> privacypolicy</span>
               </a>
             </div>
           </div>

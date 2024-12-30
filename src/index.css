@@ -1,12 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
+
 .active {
-  border-bottom: 1px solid white;
-  font-weight: 500;
-  text-decoration: underline;
-} */
+  font-weight: 900;
+}
 
 .hoverA a:hover {
   font-style: oblique;

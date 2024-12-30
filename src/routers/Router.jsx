@@ -4,6 +4,8 @@ import RegisterPage from "../pages/register/RegisterPage";
 import LoginPage from "../pages/login/LoginPage";
 // import ErrorPage from "../pages/error/ErrorPage";
 import HomePage from "../pages/home/HomePage";
+import FindTutorPage from "../pages/findTutors/FindTutorPage";
+import AddTutorialsPage from "../pages/addRutorials/AddTutorialsPage";
 
 const router = createBrowserRouter([
   //   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <LoginPage></LoginPage>,
+      },
+      {
+        path: "/findTutor",
+        element: <FindTutorPage></FindTutorPage>,
+      },
+      {
+        path: "/addTutrials",
+        element: <AddTutorialsPage></AddTutorialsPage>,
       },
     ],
   },

@@ -2,7 +2,7 @@ import React from "react";
 import Marquee from "react-fast-marquee";
 const ExtraSection2 = () => {
   return (
-    <div className="my-10">
+    <div className="my-10 p-2">
       <div>
         <h1 className="text-center text-xl">
           Trusted online tutors from top universities such
