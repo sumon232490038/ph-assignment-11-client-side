@@ -2,6 +2,7 @@ import Banner from "../../components/banner/Banner";
 import CategorySection from "../../components/CategorySection";
 import ExtraSection1 from "../../components/ExtraSection1";
 import ExtraSection2 from "../../components/ExtraSection2";
+import ExtraSection3 from "../../components/ExtraSection3";
 import StatsSection from "../../components/StatsSection";
 const HomePage = () => {
   return (
@@ -21,6 +22,9 @@ const HomePage = () => {
         </section>
         <section>
           <ExtraSection2></ExtraSection2>
+        </section>
+        <section>
+          <ExtraSection3></ExtraSection3>
         </section>
       </main>
     </div>
