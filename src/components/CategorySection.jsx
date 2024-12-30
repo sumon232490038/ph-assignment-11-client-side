@@ -24,19 +24,19 @@ const CategorySection = () => {
                   r="4"
                   fill="#121117"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                 ></circle>
                 <path id="Vector 1" stroke="#fff" d="M24 20.5V23h2"></path>
                 <path
                   id="Rectangle 4438"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M18 31h12v13H18z"
                 ></path>
                 <path
                   id="Rectangle 4439"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M16 15h16v16H16z"
                 ></path>
                 <path
@@ -106,28 +106,28 @@ const CategorySection = () => {
                 <path
                   id="Ellipse 17"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M31 38.5s-1.854-6-7.5-6-7.5 6-7.5 6"
                 ></path>
                 <g id="Group 316127858">
                   <path
                     id="Rectangle 1761"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M33.5 15.867c.24.891.505 1.974.771 3.239.863 4.1 1.729 10.11 1.729 17.714v6.68h-5v-6.68c0-7.604.866-13.615 1.729-17.714.266-1.265.531-2.348.771-3.24Z"
                   ></path>
                 </g>
                 <path
                   id="Rectangle 1761_2"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M28.5 11.476c.238 1.056.502 2.328.766 3.802C30.132 20.118 31 27.13 31 35.782V43.5h-5v-7.718c0-8.652.868-15.663 1.734-20.504.264-1.474.527-2.746.766-3.802Z"
                 ></path>
                 <g id="Group 316127857">
                   <path
                     id="Rectangle 1761_3"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M23.5 20.517c.241.786.51 1.739.778 2.844C25.138 26.897 26 31.992 26 38.2v5.3h-5v-5.3c0-6.208.862-11.303 1.722-14.839a50 50 0 0 1 .778-2.844Z"
                   ></path>
                 </g>
@@ -135,14 +135,14 @@ const CategorySection = () => {
                   <path
                     id="Rectangle 1761_4"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M13.5 15.867c-.24.891-.505 1.974-.771 3.239C11.866 23.206 11 29.216 11 36.82v6.68h5v-6.68c0-7.604-.866-13.615-1.729-17.714a60 60 0 0 0-.771-3.24Z"
                   ></path>
                 </g>
                 <path
                   id="Rectangle 4476"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M18.5 11.476a86 86 0 0 0-.766 3.802C16.868 20.118 16 27.13 16 35.782V43.5h5v-7.718c0-8.652-.868-15.663-1.734-20.504a86 86 0 0 0-.766-3.802Z"
                 ></path>
                 <path
@@ -203,7 +203,7 @@ const CategorySection = () => {
                   id="Rectangle 4468"
                   fill="#fff"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M22 7.5h4v3h-4z"
                 ></path>
                 <g id="Subtract">
@@ -241,7 +241,7 @@ const CategorySection = () => {
                 <path
                   id="Ellipse 16"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="m28 43.5-3.328-14h-1.344L20 43.5s.989-3.5 4-3.5 4 3.5 4 3.5Z"
                 ></path>
               </g>
@@ -271,37 +271,37 @@ const CategorySection = () => {
                 <path
                   id="Rectangle 4499"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M10 24h4v18h-4z"
                 ></path>
                 <path
                   id="Rectangle 4500"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M18 24h4v18h-4z"
                 ></path>
                 <path
                   id="Rectangle 4501"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M26 24h4v18h-4z"
                 ></path>
                 <path
                   id="Rectangle 4502"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M34 24h4v18h-4z"
                 ></path>
                 <path
                   id="Rectangle 4503"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M10 19h28v5H10v-5Z"
                 ></path>
                 <path
                   id="Rectangle 4505"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M13 14h22v5H13v-5Z"
                 ></path>
                 <path
@@ -557,7 +557,7 @@ const CategorySection = () => {
                     <path
                       id="Rectangle 4545"
                       stroke="#121117"
-                      stroke-width="2"
+                      strokeWidth="2"
                       d="M27 14.81v1h4V14h1v1.81h4V14h1v17H26V14h1z"
                     ></path>
                   </g>
@@ -575,7 +575,7 @@ const CategorySection = () => {
                     <path
                       id="Rectangle 4545_2"
                       stroke="#121117"
-                      stroke-width="2"
+                      strokeWidth="2"
                       d="M12 9.81v1h4V9h1v1.81h4V9h1v17H11V9h1z"
                     ></path>
                   </g>
@@ -589,7 +589,7 @@ const CategorySection = () => {
                       id="Rectangle 4542"
                       fill="#fff"
                       stroke="#121117"
-                      stroke-width="2"
+                      strokeWidth="2"
                       d="M22 21v-1h1v19H10V20h1v2h5v-2h1v2h5z"
                     ></path>
                     <path
@@ -612,7 +612,7 @@ const CategorySection = () => {
                     id="Vector 304"
                     fill="#fff"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M37 23v8.42L23.734 39H23v-8.42L36.266 23z"
                   ></path>
                   <path
@@ -636,7 +636,7 @@ const CategorySection = () => {
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
       </div>
-      <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-3">
+      <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
         <div className="flex gap-3 items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -651,7 +651,7 @@ const CategorySection = () => {
             <g id="Frame 316128411">
               <g id="Group 316127878">
                 <g id="Group 316127868">
-                  <g id="Group 316127866" stroke="#121117" stroke-width="2">
+                  <g id="Group 316127866" stroke="#121117" strokeWidth="2">
                     <path id="Rectangle 4524" d="M10 16.5h6v25h-6z"></path>
                     <path
                       id="Rectangle 4527"
@@ -676,7 +676,7 @@ const CategorySection = () => {
                       rx="2"
                     ></rect>
                   </g>
-                  <g id="Group 316127867" stroke="#121117" stroke-width="2">
+                  <g id="Group 316127867" stroke="#121117" strokeWidth="2">
                     <path id="Rectangle 4524_2" d="M32 16.5h6v25h-6z"></path>
                     <path
                       id="Rectangle 4527_2"
@@ -704,7 +704,7 @@ const CategorySection = () => {
                   <path
                     id="Vector 300"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M16 30.5c0-7 8-10 8-10s8 3.5 8 10"
                   ></path>
                   <path
@@ -716,7 +716,7 @@ const CategorySection = () => {
                   <path
                     id="Vector 301"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M21 41v-3.5c0-2.1 3-3.5 3-3.5s3 1.55 3 3.5v3"
                   ></path>
                   <path
@@ -758,43 +758,43 @@ const CategorySection = () => {
                   <path
                     id="Rectangle 4536"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M12 14.5h5v5h-5z"
                   ></path>
                   <path
                     id="Rectangle 4539"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M12 25.5h5v13h-5z"
                   ></path>
                   <path
                     id="Rectangle 4537"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M22 14.5h4v5h-4z"
                   ></path>
                   <path
                     id="Rectangle 4538"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M31 14.5h5v5h-5z"
                   ></path>
                   <path
                     id="Rectangle 4540"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M31 25.5h5v13h-5z"
                   ></path>
                   <path
                     id="Rectangle 4534"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="M10 19.5h28v6H10z"
                   ></path>
                   <path
                     id="Rectangle 4535"
                     stroke="#121117"
-                    stroke-width="2"
+                    strokeWidth="2"
                     d="m9.245 14.5-3.175-4h35.86l-3.175 4z"
                   ></path>
                   <path
@@ -835,25 +835,25 @@ const CategorySection = () => {
                 <path
                   id="Ellipse 18"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M36 10.914c0 6.904-5.596 12.5-12.5 12.5S11 17.818 11 10.914"
                 ></path>
                 <path
                   id="Ellipse 20"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M11 10.914c0 3.621-1.54 6.882-4 9.165"
                 ></path>
                 <path
                   id="Ellipse 21"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M36 10.914c0 3.621 1.54 6.882 4 9.165"
                 ></path>
                 <path
                   id="Vector 294"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M7 29.414h33"
                 ></path>
                 <path
@@ -879,43 +879,43 @@ const CategorySection = () => {
                 <path
                   id="Vector 295"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M11 11.414v17.5"
                 ></path>
                 <path
                   id="Vector 300"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M17 21.914v8.5"
                 ></path>
                 <path
                   id="Vector 302"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M23.5 23.914v6.5"
                 ></path>
                 <path
                   id="Vector 303"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M30 21.914v6.5"
                 ></path>
                 <path
                   id="Vector 296"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M36 11.414v17.5"
                 ></path>
                 <path
                   id="Rectangle 4492"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M14 38.414v-6h-3v6"
                 ></path>
                 <path
                   id="Rectangle 4493"
                   stroke="#121117"
-                  stroke-width="2"
+                  strokeWidth="2"
                   d="M33 38.414v-6h3v6"
                 ></path>
                 <path
