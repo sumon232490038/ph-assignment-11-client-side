@@ -3,6 +3,7 @@ import CategorySection from "../../components/CategorySection";
 import ExtraSection1 from "../../components/ExtraSection1";
 import ExtraSection2 from "../../components/ExtraSection2";
 import ExtraSection3 from "../../components/ExtraSection3";
+import ExtraSection4 from "../../components/ExtraSection4";
 import StatsSection from "../../components/StatsSection";
 const HomePage = () => {
   return (
@@ -19,6 +20,9 @@ const HomePage = () => {
         </section>
         <section>
           <CategorySection></CategorySection>
+        </section>
+        <section>
+          <ExtraSection4></ExtraSection4>
         </section>
         <section>
           <ExtraSection2></ExtraSection2>
