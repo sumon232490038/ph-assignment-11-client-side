@@ -1,5 +1,6 @@
 import Banner from "../../components/banner/Banner";
 import CategorySection from "../../components/CategorySection";
+import ExtraSection1 from "../../components/ExtraSection1";
 import StatsSection from "../../components/StatsSection";
 const HomePage = () => {
   return (
@@ -10,6 +11,9 @@ const HomePage = () => {
       <main className="my-10  mx-auto">
         <section>
           <StatsSection></StatsSection>
+        </section>
+        <section className="p-2 w-full mx-auto">
+          <ExtraSection1></ExtraSection1>
         </section>
         <section>
           <CategorySection></CategorySection>
