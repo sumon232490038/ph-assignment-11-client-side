@@ -7,7 +7,7 @@ import { Outlet } from "react-router-dom";
 const RootLayout = () => {
   const { theme } = useContext(GlobalContext);
   return (
-    <div className={`${theme && "dark"} mx-auto`}>
+    <div className={`${theme && "dark"} mx-auto bg-white`}>
       <div className="dark:bg-black   dark:text-white">
         <nav className="p-2">
           <NavBar></NavBar>
