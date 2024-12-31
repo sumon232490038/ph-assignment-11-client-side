@@ -7,6 +7,7 @@ import HomePage from "../pages/home/HomePage";
 import FindTutorPage from "../pages/findTutors/FindTutorPage";
 import AddTutorialsPage from "../pages/addRutorials/AddTutorialsPage";
 import MyTutorialsPage from "../pages/myTutorials/myTutorialsPage";
+import UpdateTutorials from "../pages/updateTutorials/UpdateTutorials";
 
 const router = createBrowserRouter([
   //   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: "/myTutrials",
         element: <MyTutorialsPage></MyTutorialsPage>,
+      },
+      {
+        path: "/myTutorial/:id",
+        element: <UpdateTutorials></UpdateTutorials>,
       },
     ],
   },

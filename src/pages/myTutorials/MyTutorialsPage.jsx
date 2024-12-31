@@ -81,7 +81,7 @@ const myTutorialsPage = () => {
                     Delete
                   </button>
 
-                  <Link>
+                  <Link to={`/myTutorial/${tutorial._id}`}>
                     <button className="btn  btn-xs">Update</button>
                   </Link>
                 </td>
