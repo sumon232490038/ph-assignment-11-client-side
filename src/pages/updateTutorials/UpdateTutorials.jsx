@@ -21,9 +21,9 @@ const UpdateTutorials = () => {
     console.log(jobData);
     axios
       .post(`http://localhost:5000/updateTutorial/${id}`, jobData)
-      .then((data) => {
-        console.log(data);
-        if (data) {
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.modifiedCount) {
           Swal.fire({
             position: "top-end",
             icon: "success",
