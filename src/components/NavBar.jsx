@@ -58,7 +58,10 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="flex">
-              <NavLink className="flex items-center px-3 -mb-1 hover:underline  dark:border-">
+              <NavLink
+                to={`/myTutrials`}
+                className="flex items-center px-3 -mb-1 hover:underline  dark:border-"
+              >
                 My Tutorials
               </NavLink>
             </li>
@@ -162,8 +165,7 @@ const NavBar = () => {
               <NavLink to={`/`}>Home</NavLink>
               <NavLink to={`/findTutor`}>Find tutors</NavLink>
               <NavLink to={`/addTutrials`}>Add Tutorials</NavLink>
-              <NavLink>My Tutorials</NavLink>
-              <NavLink>My booked tutors</NavLink>
+              <NavLink to={`/myTutrials`}>My Tutorials</NavLink>
               <NavLink>My booked tutors</NavLink>
               {user?.email ? (
                 <>

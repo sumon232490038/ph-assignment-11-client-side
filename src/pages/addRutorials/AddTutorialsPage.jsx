@@ -1,4 +1,6 @@
+import Swal from "sweetalert2";
 import userAuth from "../../hooks/userAuth";
+import axios from "axios";
 
 const AddTutorialsPage = () => {
   const { user } = userAuth();
@@ -8,26 +10,18 @@ const AddTutorialsPage = () => {
     const jobData = Object.fromEntries(formData.entries());
     console.log(jobData);
 
-    // fetch("http://localhost:3000/jobs", {
-    //   method: "POST",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify(newJob),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //     if (data) {
-    //       Swal.fire({
-    //         position: "top-end",
-    //         icon: "success",
-    //         title: "Your jobs is added",
-    //         showConfirmButton: false,
-    //         timer: 1500,
-    //       });
-    //     }
-    //   });
+    axios.post("http://localhost:5000/addTutorials", jobData).then((data) => {
+      console.log(data);
+      if (data) {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Your jobs is added",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      }
+    });
   };
   return (
     <div className="p-2">
@@ -42,9 +36,10 @@ const AddTutorialsPage = () => {
               <input
                 name="name"
                 type="text"
-                placeholder="Name"
+                readOnly
+                // placeholder="Name"
                 defaultValue={user?.displayName}
-                className="input input-bordered border-black bg-white"
+                className="input input-bordered border-black dark:text-black "
                 required
               />
             </div>
@@ -55,9 +50,10 @@ const AddTutorialsPage = () => {
               <input
                 name="email"
                 type="email"
+                readOnly
                 defaultValue={user?.email}
-                placeholder="Email"
-                className="input input-bordered border-black bg-white"
+                // placeholder="Email"
+                className="input input-bordered border-black dark:text-black "
                 required
               />
             </div>
@@ -72,8 +68,7 @@ const AddTutorialsPage = () => {
                 name="photoUrl"
                 type="url"
                 placeholder="PhotoURL"
-                defaultValue={user?.displayName}
-                className="input input-bordered border-black bg-white"
+                className="input input-bordered border-black dark:text-black "
                 required
               />
             </div>
@@ -86,7 +81,7 @@ const AddTutorialsPage = () => {
                 type="number"
                 // defaultValue={user?.email}
                 placeholder="Price"
-                className="input input-bordered border-black bg-white"
+                className="input input-bordered border-black dark:text-black "
                 required
               />
             </div>
@@ -102,7 +97,7 @@ const AddTutorialsPage = () => {
                 type="number"
                 placeholder="Review"
                 defaultValue={user?.displayName}
-                className="input input-bordered border-black bg-white"
+                className="input input-bordered border-black dark:text-black "
                 required
               />
             </div>
@@ -113,9 +108,8 @@ const AddTutorialsPage = () => {
               <input
                 name="language"
                 type="text"
-                defaultValue={user?.email}
                 placeholder="Language"
-                className="input input-bordered border-black bg-white"
+                className="input input-bordered border-black dark:text-black "
                 required
               />
             </div>
@@ -129,7 +123,7 @@ const AddTutorialsPage = () => {
             <textarea
               placeholder="Discription"
               name="description"
-              className="textarea textarea-bordered textarea-lg w-full border-black "
+              className="textarea textarea-bordered textarea-lg w-full border-black dark:text-black "
             ></textarea>
           </div>
 

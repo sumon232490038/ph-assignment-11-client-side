@@ -6,6 +6,7 @@ import LoginPage from "../pages/login/LoginPage";
 import HomePage from "../pages/home/HomePage";
 import FindTutorPage from "../pages/findTutors/FindTutorPage";
 import AddTutorialsPage from "../pages/addRutorials/AddTutorialsPage";
+import MyTutorialsPage from "../pages/myTutorials/myTutorialsPage";
 
 const router = createBrowserRouter([
   //   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: "/addTutrials",
         element: <AddTutorialsPage></AddTutorialsPage>,
+      },
+      {
+        path: "/myTutrials",
+        element: <MyTutorialsPage></MyTutorialsPage>,
       },
     ],
   },
