@@ -9,14 +9,13 @@ const AddTutorialsPage = () => {
     const formData = new FormData(e.target);
     const jobData = Object.fromEntries(formData.entries());
     console.log(jobData);
-
     axios.post("http://localhost:5000/addTutorials", jobData).then((data) => {
       console.log(data);
       if (data) {
         Swal.fire({
           position: "top-end",
           icon: "success",
-          title: "Your jobs is added",
+          title: "Your Tutorials is added",
           showConfirmButton: false,
           timer: 1500,
         });
@@ -96,7 +95,7 @@ const AddTutorialsPage = () => {
                 name="review"
                 type="number"
                 placeholder="Review"
-                defaultValue={user?.displayName}
+                defaultValue={0}
                 className="input input-bordered border-black dark:text-black "
                 required
               />
@@ -130,7 +129,7 @@ const AddTutorialsPage = () => {
           {/* submit btn */}
           <div className="form-control mt-6 ">
             <button className="btn bg-black text-white  dark:border-white  btn-primary">
-              Post
+              Submit
             </button>
           </div>
         </form>

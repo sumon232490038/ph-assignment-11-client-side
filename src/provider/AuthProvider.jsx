@@ -28,29 +28,26 @@ const AuthProvider = ({ children }) => {
 
   const updateUserProfile = (userInfo) => {
     setLoader(true);
-
     return updateProfile(auth.currentUser, userInfo);
   };
   const userLogOut = () => {
     setLoader(true);
-
     return signOut(auth);
   };
 
   const userLogin = (email, password) => {
     setLoader(true);
-
     return signInWithEmailAndPassword(auth, email, password);
   };
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoader(true);
+      setLoader(false);
     });
     return () => {
       unSubscribe();
     };
-  }, [effectToggle]);
+  }, []);
   const authInfo = {
     resiterUser,
     updateUserProfile,
