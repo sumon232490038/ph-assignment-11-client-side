@@ -41,11 +41,24 @@ const UpdateTutorials = () => {
           Tutorial update page
         </h1>
         <form onSubmit={hnadleForm} className="card-body ">
+          <div className="form-control ">
+            <label className="label">
+              <span className="label-text dark:text-white">Tutorial Name</span>
+            </label>
+            <input
+              name="name"
+              type="text"
+              // placeholder="Name"
+              defaultValue={tutorial?.tutorialName}
+              className="input input-bordered border-black dark:text-black "
+              required
+            />
+          </div>
           <div className="grid grid-cols-1  md:grid-cols-2 gap-5">
             {/* {HR Name} */}
             <div className="form-control ">
               <label className="label">
-                <span className="label-text dark:text-white">Name</span>
+                <span className="label-text dark:text-white">Tutor Name</span>
               </label>
               <input
                 name="name"

@@ -38,7 +38,7 @@ const myTutorialsPage = () => {
             <tr className="dark:text-white text-black border border-black dark:border-white">
               <th>Name</th>
               <th>Language</th>
-              <th>Price</th>
+              <th>Price/hour</th>
               <th>Review</th>
               <th>Action</th>
             </tr>
@@ -60,14 +60,14 @@ const myTutorialsPage = () => {
                       </div>
                     </div>
                     <div>
-                      <div className="font-bold">{tutorial.name}</div>
+                      <div className="font-bold">{tutorial.tutorialName}</div>
                     </div>
                   </div>
                 </td>
                 <td>
                   <p>{tutorial.language}</p>
                 </td>
-                <td>{`${tutorial.price} $`}</td>
+                <td>{`$ ${tutorial.price}/hour`}</td>
                 <td>
                   <button className="btn btn-ghost btn-xs">
                     {tutorial.review}
