@@ -10,7 +10,7 @@ const TutorsDetailsPage = () => {
   return (
     <div className="p-2 my-20">
       <div>
-        <div className="grid grid-cols-1 md:grid-cols-3 border gap-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 border gap-3">
           <div>
             <img className="h-56 w-full" src={tutor.photoUrl} alt="" />
           </div>

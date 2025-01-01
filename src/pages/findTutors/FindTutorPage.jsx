@@ -5,7 +5,7 @@ import userAuth from "../../hooks/userAuth";
 import { Link } from "react-router-dom";
 
 const FindTutorPage = () => {
-  const { user } = userAuth();
+  const { user, setLoader } = userAuth();
   const [search, setSearch] = useState("");
   console.log(search);
 
@@ -14,8 +14,9 @@ const FindTutorPage = () => {
   useEffect(() => {
     axios.get(`http://localhost:5000/find-tutors`).then((res) => {
       setTutors(res.data);
+      setLoader(false);
     });
-  }, [user.email]);
+  }, [user?.email]);
   return (
     <div className="px-2 my-10">
       <div className="flex items-center justify-center mb-5">

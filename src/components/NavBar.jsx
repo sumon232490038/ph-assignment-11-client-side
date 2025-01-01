@@ -6,6 +6,8 @@ import { GlobalContext } from "../provider/Contexts";
 import { MdOutlineDarkMode } from "react-icons/md";
 import { Tooltip as ReactTooltip } from "react-tooltip";
 import userAuth from "../hooks/userAuth";
+import Swal from "sweetalert2";
+import "animate.css";
 
 const NavBar = () => {
   const { theme, setTheme } = useContext(GlobalContext);
@@ -13,6 +15,26 @@ const NavBar = () => {
 
   const handleTheme = () => {
     setTheme(!theme);
+  };
+  const handleLogOut = () => {
+    userLogOut();
+    Swal.fire({
+      title: "LogOut Successfull!!",
+      showClass: {
+        popup: `
+          animate__animated
+          animate__fadeInUp
+          animate__faster
+        `,
+      },
+      hideClass: {
+        popup: `
+          animate__animated
+          animate__fadeOutDown
+          animate__faster
+        `,
+      },
+    });
   };
 
   return (
@@ -66,7 +88,10 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className="flex">
-              <NavLink className="flex items-center px-3 -mb-1 hover:underline  dark:border-">
+              <NavLink
+                to={`/bookedTutors`}
+                className="flex items-center px-3 -mb-1 hover:underline  dark:border-"
+              >
                 My booked tutors
               </NavLink>
             </li>
@@ -106,7 +131,7 @@ const NavBar = () => {
               <>
                 {" "}
                 <button
-                  onClick={() => userLogOut()}
+                  onClick={handleLogOut}
                   className="px-3 py-2 mr-2  font-semibold border  border-black  rounded bg-white  text-black "
                 >
                   Log out
@@ -149,7 +174,7 @@ const NavBar = () => {
             </button>
             <ul
               tabIndex={0}
-              className="dropdown-content gap-2 bg-white menu border dark:bg-black mt-5 z-[1] w-52 p-2 shadow"
+              className="dropdown-content gap-2 bg-white menu border dark:bg-[#0F172A] mt-5 z-[1] w-52 p-2 shadow"
             >
               {user && (
                 <div className="flex items-center gap-1 border-b pb-2">
@@ -166,10 +191,17 @@ const NavBar = () => {
               <NavLink to={`/findTutor`}>Find tutors</NavLink>
               <NavLink to={`/addTutrials`}>Add Tutorials</NavLink>
               <NavLink to={`/myTutrials`}>My Tutorials</NavLink>
-              <NavLink>My booked tutors</NavLink>
+              <NavLink to={`/bookedTutors`}>My booked tutors</NavLink>
               {user?.email ? (
                 <>
-                  <NavLink>Log out</NavLink>
+                  <NavLink>
+                    <button
+                      onClick={handleLogOut}
+                      className="px-3 py-2 mr-2  font-semibold border  border-black  rounded bg-white  text-black "
+                    >
+                      Log out
+                    </button>
+                  </NavLink>
                 </>
               ) : (
                 <>

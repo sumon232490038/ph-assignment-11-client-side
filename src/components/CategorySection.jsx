@@ -79,7 +79,6 @@ const CategorySection = () => {
           </svg>
           <div>
             <h1 className="text-3xl font-black">Enlish tutors</h1>
-            <p>2323 teachers</p>
           </div>
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
@@ -180,7 +179,6 @@ const CategorySection = () => {
           </svg>
           <div>
             <h1 className="text-3xl font-black">Spanish tutors</h1>
-            <p>2323 teachers</p>
           </div>
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
@@ -249,7 +247,6 @@ const CategorySection = () => {
           </svg>
           <div>
             <h1 className="text-3xl font-black">French tutors</h1>
-            <p>2323 teachers</p>
           </div>
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
@@ -414,7 +411,6 @@ const CategorySection = () => {
           </svg>
           <div>
             <h1 className="text-3xl font-black">German tutors</h1>
-            <p>2323 teachers</p>
           </div>
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
@@ -523,7 +519,6 @@ const CategorySection = () => {
           </svg>
           <div>
             <h1 className="text-3xl font-black">Italian tutors</h1>
-            <p>2323 teachers</p>
           </div>
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
@@ -631,7 +626,6 @@ const CategorySection = () => {
           </svg>
           <div>
             <h1 className="text-3xl font-black">Chinese tutors</h1>
-            <p>2323 teachers</p>
           </div>
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
@@ -735,7 +729,6 @@ const CategorySection = () => {
           </svg>
           <div>
             <h1 className="text-3xl font-black">Arabic tutors</h1>
-            <p>2323 teachers</p>
           </div>
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
@@ -813,7 +806,6 @@ const CategorySection = () => {
           </svg>
           <div>
             <h1 className="text-2xl font-black">Japanese tutors</h1>
-            <p>2323 teachers</p>
           </div>
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
@@ -935,7 +927,6 @@ const CategorySection = () => {
           </svg>
           <div>
             <h1 className="text-2xl font-black">Portuguese tutors</h1>
-            <p>2323 teachers</p>
           </div>
         </div>
         <MdOutlineArrowForwardIos className="text-2xl" />
