@@ -67,7 +67,7 @@ const myTutorialsPage = () => {
                 <td>
                   <p>{tutorial.language}</p>
                 </td>
-                <td>{tutorial.price}</td>
+                <td>{`${tutorial.price} $`}</td>
                 <td>
                   <button className="btn btn-ghost btn-xs">
                     {tutorial.review}

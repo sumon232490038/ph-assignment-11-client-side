@@ -16,7 +16,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="p-2 bg-white  dark:bg-black  dark:text-white border-black  dark:border-white border text-black">
+    <header className="p-2 bg-white/30 backdrop-blur dark:backdrop-blur dark:bg-slate-900/75 dark:border-slate-300/10 z-40 dark:bg-[#0A1120] dark:text-white border-black  dark:border-white border text-black">
       <div className="container flex justify-between h-12  mx-auto">
         <div className="flex">
           <Link
