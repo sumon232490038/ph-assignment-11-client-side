@@ -7,20 +7,26 @@ const AddTutorialsPage = () => {
   const hnadleForm = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const jobData = Object.fromEntries(formData.entries());
-    console.log(jobData);
-    axios.post("http://localhost:5000/addTutorials", jobData).then((data) => {
-      console.log(data);
-      if (data) {
-        Swal.fire({
-          position: "top-end",
-          icon: "success",
-          title: "Your Tutorials is added",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
-    });
+    const tutorData = Object.fromEntries(formData.entries());
+    const { language, ...newTutorData } = tutorData;
+    const newLanguage = language.toLowerCase();
+    newTutorData.language = newLanguage;
+    // console.log(newTutorData);
+
+    axios
+      .post("http://localhost:5000/addTutorials", newTutorData)
+      .then((data) => {
+        console.log(data);
+        if (data) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your Tutorials is added",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      });
   };
   return (
     <div className="p-2">
@@ -121,7 +127,7 @@ const AddTutorialsPage = () => {
                 name="language"
                 type="text"
                 placeholder="Language"
-                className="input input-bordered border-black dark:text-black "
+                className="input input-bordered border-black dark:text-black uppercase"
                 required
               />
             </div>

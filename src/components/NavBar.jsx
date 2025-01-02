@@ -11,7 +11,7 @@ import "animate.css";
 
 const NavBar = () => {
   const { theme, setTheme } = useContext(GlobalContext);
-  const { user, userLogOut } = userAuth();
+  const { user, userLogOut, setTexts } = userAuth();
 
   const handleTheme = () => {
     setTheme(!theme);
@@ -65,6 +65,7 @@ const NavBar = () => {
             </li>
             <li className="flex">
               <NavLink
+                // onClick={() => setTexts("")}
                 to={`/findTutor`}
                 className="flex items-center px-3 -mb-1 hover:underline  dark:border- "
               >
@@ -188,7 +189,9 @@ const NavBar = () => {
                 </div>
               )}
               <NavLink to={`/`}>Home</NavLink>
-              <NavLink to={`/findTutor`}>Find tutors</NavLink>
+              <NavLink onClick={() => setTexts("all")} to={`/findTutor`}>
+                Find tutors
+              </NavLink>
               <NavLink to={`/addTutrials`}>Add Tutorials</NavLink>
               <NavLink to={`/myTutrials`}>My Tutorials</NavLink>
               <NavLink to={`/bookedTutors`}>My booked tutors</NavLink>

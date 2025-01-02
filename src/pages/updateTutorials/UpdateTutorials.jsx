@@ -1,13 +1,14 @@
 import Swal from "sweetalert2";
 import userAuth from "../../hooks/userAuth";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const UpdateTutorials = () => {
   const { user } = userAuth();
   const { id } = useParams();
   const [tutorial, setToturials] = useState([]);
+  const Navigate = useNavigate();
 
   useEffect(() => {
     axios.get(`http://localhost:5000/tutorialBy/${id}`).then((res) => {
@@ -17,20 +18,26 @@ const UpdateTutorials = () => {
   const hnadleForm = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
-    const jobData = Object.fromEntries(formData.entries());
-    console.log(jobData);
+    const tutorData = Object.fromEntries(formData.entries());
+    const { language, ...newTutorData } = tutorData;
+    const newLanguage = language.toLowerCase();
+    newTutorData.language = newLanguage;
+    console.log(newTutorData);
     axios
-      .post(`http://localhost:5000/updateTutorial/${id}`, jobData)
+      .post(`http://localhost:5000/updateTutorial/${id}`, newTutorData)
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data.modifiedCount);
         if (res.data.modifiedCount) {
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: "Your Tutorial  is Updated!!",
-            showConfirmButton: false,
-            timer: 1500,
-          });
+          Swal.fire(
+            {
+              position: "top-end",
+              icon: "success",
+              title: "Your Tutorial  is Updated!!",
+              showConfirmButton: false,
+              timer: 1500,
+            },
+            Navigate("/myTutrials")
+          );
         }
       });
   };
@@ -46,7 +53,7 @@ const UpdateTutorials = () => {
               <span className="label-text dark:text-white">Tutorial Name</span>
             </label>
             <input
-              name="name"
+              name="tutorialName"
               type="text"
               // placeholder="Name"
               defaultValue={tutorial?.tutorialName}
@@ -124,9 +131,9 @@ const UpdateTutorials = () => {
                 name="review"
                 type="number"
                 // placeholder="Review"
-                defaultValue={tutorial.review}
-                className="input input-bordered border-black dark:text-black "
+                defaultValue={tutorial.review === 0 ? 0 : tutorial.review}
                 readOnly
+                className="input input-bordered border-black dark:text-black "
               />
             </div>
             <div className="form-control">
