@@ -18,6 +18,7 @@ const AuthProvider = ({ children }) => {
   const [texts, setTexts] = useState("");
   const [effectToggle, setEfectToggle] = useState(false);
   const [loader, setLoader] = useState(true);
+  const [count, setCount] = useState(0);
   const resiterUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
@@ -63,6 +64,8 @@ const AuthProvider = ({ children }) => {
     setLoader,
     texts,
     setTexts,
+    count,
+    setCount,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

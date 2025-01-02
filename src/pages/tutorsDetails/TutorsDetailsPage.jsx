@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import userAuth from "../../hooks/userAuth";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 const TutorsDetailsPage = () => {
   const { user } = userAuth();
   const tutor = useLoaderData();
+  const Navigate = useNavigate();
 
   const handleBookedTutor = (id) => {
     console.log(id);
@@ -24,9 +25,9 @@ const TutorsDetailsPage = () => {
     axios
       .post(`http://localhost:5000/myBookedTutors`, bookedInfo)
       .then((res) => {
-        console.log(res);
         if (res) {
           Swal.fire("Tutor booking successfull!");
+          Navigate("/bookedTutors");
         }
       });
   };

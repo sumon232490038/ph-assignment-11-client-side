@@ -4,9 +4,237 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../provider/AuthProvider";
 
 const CategorySection = () => {
-  const { texts, setTexts } = useContext(AuthContext);
+  const { setTexts } = useContext(AuthContext);
   return (
     <div className="grid grid-cols-1 mx-auto gap-4 md:grid-cols-2 lg:grid-cols-3 p-2">
+      <Link onClick={() => setTexts("Arabic")} to="findtutor">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+          <div className="flex gap-3 items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="49"
+              fill="none"
+              viewBox="0 0 48 49"
+              aria-hidden="true"
+              focusable="false"
+              className="bg-white"
+            >
+              <g id="Frame 316128411">
+                <g id="Group 316127878">
+                  <g id="Group 316127868">
+                    <g id="Group 316127866" stroke="#121117" strokeWidth="2">
+                      <path id="Rectangle 4524" d="M10 16.5h6v25h-6z"></path>
+                      <path
+                        id="Rectangle 4527"
+                        d="M10.025 15.5c.157-3.052 1.013-5.31 1.85-6.83.404-.73.805-1.293 1.125-1.692.32.399.72.961 1.124 1.693.838 1.519 1.694 3.777 1.85 6.829z"
+                      ></path>
+                      <rect
+                        id="Rectangle 4525"
+                        width="4"
+                        height="4"
+                        x="7"
+                        y="15.5"
+                        fill="#fff"
+                        rx="2"
+                      ></rect>
+                      <rect
+                        id="Rectangle 4526"
+                        width="4"
+                        height="4"
+                        x="15"
+                        y="15.5"
+                        fill="#fff"
+                        rx="2"
+                      ></rect>
+                    </g>
+                    <g id="Group 316127867" stroke="#121117" strokeWidth="2">
+                      <path id="Rectangle 4524_2" d="M32 16.5h6v25h-6z"></path>
+                      <path
+                        id="Rectangle 4527_2"
+                        d="M32.025 15.5c.157-3.052 1.013-5.31 1.85-6.83.404-.73.805-1.293 1.125-1.692.32.399.72.961 1.124 1.693.838 1.519 1.694 3.777 1.85 6.829z"
+                      ></path>
+                      <rect
+                        id="Rectangle 4525_2"
+                        width="4"
+                        height="4"
+                        x="29"
+                        y="15.5"
+                        fill="#fff"
+                        rx="2"
+                      ></rect>
+                      <rect
+                        id="Rectangle 4526_2"
+                        width="4"
+                        height="4"
+                        x="37"
+                        y="15.5"
+                        fill="#fff"
+                        rx="2"
+                      ></rect>
+                    </g>
+                    <path
+                      id="Vector 300"
+                      stroke="#121117"
+                      strokeWidth="2"
+                      d="M16 30.5c0-7 8-10 8-10s8 3.5 8 10"
+                    ></path>
+                    <path
+                      id="Rectangle 4497"
+                      fill="#121117"
+                      d="M24 24.5h2v2h-2z"
+                      transform="rotate(45 24 24.5)"
+                    ></path>
+                    <path
+                      id="Vector 301"
+                      stroke="#121117"
+                      strokeWidth="2"
+                      d="M21 41v-3.5c0-2.1 3-3.5 3-3.5s3 1.55 3 3.5v3"
+                    ></path>
+                    <path
+                      id="Rectangle 4528"
+                      fill="#121117"
+                      d="M7 29.5h34v2H7z"
+                    ></path>
+                    <path
+                      id="Rectangle 4529"
+                      fill="#121117"
+                      d="M6 40.5h36v2H6z"
+                    ></path>
+                  </g>
+                </g>
+              </g>
+            </svg>
+            <div>
+              <h1 className="text-3xl font-black">Arabic tutors</h1>
+            </div>
+          </div>
+          <MdOutlineArrowForwardIos className="text-2xl" />
+        </div>
+      </Link>
+      <Link onClick={() => setTexts("Bangla")} to="findtutor">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+          <div className="flex gap-3 items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="49"
+              fill="none"
+              viewBox="0 0 48 49"
+              aria-hidden="true"
+              focusable="false"
+              className="bg-white"
+            >
+              <g id="Frame 316128413">
+                <g id="Group 316127874">
+                  <path
+                    id="Ellipse 18"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M36 10.914c0 6.904-5.596 12.5-12.5 12.5S11 17.818 11 10.914"
+                  ></path>
+                  <path
+                    id="Ellipse 20"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M11 10.914c0 3.621-1.54 6.882-4 9.165"
+                  ></path>
+                  <path
+                    id="Ellipse 21"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M36 10.914c0 3.621 1.54 6.882 4 9.165"
+                  ></path>
+                  <path
+                    id="Vector 294"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M7 29.414h33"
+                  ></path>
+                  <path
+                    id="Rectangle 4491"
+                    fill="#121117"
+                    d="M7 31.414h33v2H7z"
+                  ></path>
+                  <path
+                    id="Rectangle 4494"
+                    fill="#121117"
+                    d="M7 38.914h33v2H7z"
+                  ></path>
+                  <path
+                    id="Rectangle 4495"
+                    fill="#121117"
+                    d="M9 41.914h7v2H9z"
+                  ></path>
+                  <path
+                    id="Rectangle 4496"
+                    fill="#121117"
+                    d="M31 41.914h7v2h-7z"
+                  ></path>
+                  <path
+                    id="Vector 295"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M11 11.414v17.5"
+                  ></path>
+                  <path
+                    id="Vector 300"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M17 21.914v8.5"
+                  ></path>
+                  <path
+                    id="Vector 302"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M23.5 23.914v6.5"
+                  ></path>
+                  <path
+                    id="Vector 303"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M30 21.914v6.5"
+                  ></path>
+                  <path
+                    id="Vector 296"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M36 11.414v17.5"
+                  ></path>
+                  <path
+                    id="Rectangle 4492"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M14 38.414v-6h-3v6"
+                  ></path>
+                  <path
+                    id="Rectangle 4493"
+                    stroke="#121117"
+                    strokeWidth="2"
+                    d="M33 38.414v-6h3v6"
+                  ></path>
+                  <path
+                    id="Rectangle 4497"
+                    fill="#121117"
+                    d="M11 5.5h3v3h-3z"
+                    transform="rotate(45 11 5.5)"
+                  ></path>
+                  <path
+                    id="Rectangle 4498"
+                    fill="#121117"
+                    d="M36 5.5h3v3h-3z"
+                    transform="rotate(45 36 5.5)"
+                  ></path>
+                </g>
+              </g>
+            </svg>
+            <div>
+              <h1 className="text-3xl font-black">Bangla tutors</h1>
+            </div>
+          </div>
+          <MdOutlineArrowForwardIos className="text-2xl" />
+        </div>
+      </Link>
       <Link onClick={() => setTexts("English")} to={`findtutor/`}>
         <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
@@ -648,111 +876,7 @@ const CategorySection = () => {
           <MdOutlineArrowForwardIos className="text-2xl" />
         </div>
       </Link>
-      <Link onClick={() => setTexts("Arabic")} to="findtutor">
-        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
-          <div className="flex gap-3 items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="49"
-              fill="none"
-              viewBox="0 0 48 49"
-              aria-hidden="true"
-              focusable="false"
-              className="bg-white"
-            >
-              <g id="Frame 316128411">
-                <g id="Group 316127878">
-                  <g id="Group 316127868">
-                    <g id="Group 316127866" stroke="#121117" strokeWidth="2">
-                      <path id="Rectangle 4524" d="M10 16.5h6v25h-6z"></path>
-                      <path
-                        id="Rectangle 4527"
-                        d="M10.025 15.5c.157-3.052 1.013-5.31 1.85-6.83.404-.73.805-1.293 1.125-1.692.32.399.72.961 1.124 1.693.838 1.519 1.694 3.777 1.85 6.829z"
-                      ></path>
-                      <rect
-                        id="Rectangle 4525"
-                        width="4"
-                        height="4"
-                        x="7"
-                        y="15.5"
-                        fill="#fff"
-                        rx="2"
-                      ></rect>
-                      <rect
-                        id="Rectangle 4526"
-                        width="4"
-                        height="4"
-                        x="15"
-                        y="15.5"
-                        fill="#fff"
-                        rx="2"
-                      ></rect>
-                    </g>
-                    <g id="Group 316127867" stroke="#121117" strokeWidth="2">
-                      <path id="Rectangle 4524_2" d="M32 16.5h6v25h-6z"></path>
-                      <path
-                        id="Rectangle 4527_2"
-                        d="M32.025 15.5c.157-3.052 1.013-5.31 1.85-6.83.404-.73.805-1.293 1.125-1.692.32.399.72.961 1.124 1.693.838 1.519 1.694 3.777 1.85 6.829z"
-                      ></path>
-                      <rect
-                        id="Rectangle 4525_2"
-                        width="4"
-                        height="4"
-                        x="29"
-                        y="15.5"
-                        fill="#fff"
-                        rx="2"
-                      ></rect>
-                      <rect
-                        id="Rectangle 4526_2"
-                        width="4"
-                        height="4"
-                        x="37"
-                        y="15.5"
-                        fill="#fff"
-                        rx="2"
-                      ></rect>
-                    </g>
-                    <path
-                      id="Vector 300"
-                      stroke="#121117"
-                      strokeWidth="2"
-                      d="M16 30.5c0-7 8-10 8-10s8 3.5 8 10"
-                    ></path>
-                    <path
-                      id="Rectangle 4497"
-                      fill="#121117"
-                      d="M24 24.5h2v2h-2z"
-                      transform="rotate(45 24 24.5)"
-                    ></path>
-                    <path
-                      id="Vector 301"
-                      stroke="#121117"
-                      strokeWidth="2"
-                      d="M21 41v-3.5c0-2.1 3-3.5 3-3.5s3 1.55 3 3.5v3"
-                    ></path>
-                    <path
-                      id="Rectangle 4528"
-                      fill="#121117"
-                      d="M7 29.5h34v2H7z"
-                    ></path>
-                    <path
-                      id="Rectangle 4529"
-                      fill="#121117"
-                      d="M6 40.5h36v2H6z"
-                    ></path>
-                  </g>
-                </g>
-              </g>
-            </svg>
-            <div>
-              <h1 className="text-3xl font-black">Arabic tutors</h1>
-            </div>
-          </div>
-          <MdOutlineArrowForwardIos className="text-2xl" />
-        </div>
-      </Link>
+
       <Link onClick={() => setTexts("Japanese")} to="findtutor">
         {" "}
         <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
@@ -828,129 +952,6 @@ const CategorySection = () => {
             </svg>
             <div>
               <h1 className="text-2xl font-black">Japanese tutors</h1>
-            </div>
-          </div>
-          <MdOutlineArrowForwardIos className="text-2xl" />
-        </div>
-      </Link>
-      <Link onClick={() => setTexts("Portuguese")} to="findtutor">
-        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
-          <div className="flex gap-3 items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="49"
-              fill="none"
-              viewBox="0 0 48 49"
-              aria-hidden="true"
-              focusable="false"
-              className="bg-white"
-            >
-              <g id="Frame 316128413">
-                <g id="Group 316127874">
-                  <path
-                    id="Ellipse 18"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M36 10.914c0 6.904-5.596 12.5-12.5 12.5S11 17.818 11 10.914"
-                  ></path>
-                  <path
-                    id="Ellipse 20"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M11 10.914c0 3.621-1.54 6.882-4 9.165"
-                  ></path>
-                  <path
-                    id="Ellipse 21"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M36 10.914c0 3.621 1.54 6.882 4 9.165"
-                  ></path>
-                  <path
-                    id="Vector 294"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M7 29.414h33"
-                  ></path>
-                  <path
-                    id="Rectangle 4491"
-                    fill="#121117"
-                    d="M7 31.414h33v2H7z"
-                  ></path>
-                  <path
-                    id="Rectangle 4494"
-                    fill="#121117"
-                    d="M7 38.914h33v2H7z"
-                  ></path>
-                  <path
-                    id="Rectangle 4495"
-                    fill="#121117"
-                    d="M9 41.914h7v2H9z"
-                  ></path>
-                  <path
-                    id="Rectangle 4496"
-                    fill="#121117"
-                    d="M31 41.914h7v2h-7z"
-                  ></path>
-                  <path
-                    id="Vector 295"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M11 11.414v17.5"
-                  ></path>
-                  <path
-                    id="Vector 300"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M17 21.914v8.5"
-                  ></path>
-                  <path
-                    id="Vector 302"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M23.5 23.914v6.5"
-                  ></path>
-                  <path
-                    id="Vector 303"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M30 21.914v6.5"
-                  ></path>
-                  <path
-                    id="Vector 296"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M36 11.414v17.5"
-                  ></path>
-                  <path
-                    id="Rectangle 4492"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M14 38.414v-6h-3v6"
-                  ></path>
-                  <path
-                    id="Rectangle 4493"
-                    stroke="#121117"
-                    strokeWidth="2"
-                    d="M33 38.414v-6h3v6"
-                  ></path>
-                  <path
-                    id="Rectangle 4497"
-                    fill="#121117"
-                    d="M11 5.5h3v3h-3z"
-                    transform="rotate(45 11 5.5)"
-                  ></path>
-                  <path
-                    id="Rectangle 4498"
-                    fill="#121117"
-                    d="M36 5.5h3v3h-3z"
-                    transform="rotate(45 36 5.5)"
-                  ></path>
-                </g>
-              </g>
-            </svg>
-            <div>
-              <h1 className="text-2xl font-black">Portuguese tutors</h1>
             </div>
           </div>
           <MdOutlineArrowForwardIos className="text-2xl" />

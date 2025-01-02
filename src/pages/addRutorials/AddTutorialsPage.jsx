@@ -8,10 +8,13 @@ const AddTutorialsPage = () => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const tutorData = Object.fromEntries(formData.entries());
-    const { language, ...newTutorData } = tutorData;
+    const { language, price, ...newTutorData } = tutorData;
+
+    const newPrice = parseInt(price);
     const newLanguage = language.toLowerCase();
     newTutorData.language = newLanguage;
-    // console.log(newTutorData);
+    newTutorData.price = newPrice;
+    console.log(newTutorData);
 
     axios
       .post("http://localhost:5000/addTutorials", newTutorData)
@@ -127,7 +130,7 @@ const AddTutorialsPage = () => {
                 name="language"
                 type="text"
                 placeholder="Language"
-                className="input input-bordered border-black dark:text-black uppercase"
+                className="input input-bordered border-black dark:text-black lowercase"
                 required
               />
             </div>

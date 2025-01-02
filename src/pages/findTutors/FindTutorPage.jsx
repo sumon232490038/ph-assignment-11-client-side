@@ -7,10 +7,16 @@ import Lottie from "lottie-react";
 import lottee from "../../../public/reactLotte/lotte2.json";
 
 const FindTutorPage = () => {
-  const { user, setLoader, texts, setTexts } = userAuth();
+  const { user, setLoader, texts, setTexts, count, setCount } = userAuth();
   const [search, setSearch] = useState("");
   const [tutors, setTutors] = useState([]);
-  console.log(tutors.length);
+
+  let sum = 0;
+
+  const reviewCount = tutors.map(
+    (tutor) => (sum = sum + parseInt(tutor.review))
+  );
+  console.log(count);
 
   useEffect(() => {
     if (texts) {
@@ -20,13 +26,12 @@ const FindTutorPage = () => {
           setTutors(res.data);
           console.log(res);
           setLoader(false);
-          // setTexts("");
         });
     } else {
       axios.get(`http://localhost:5000/find-tutors`).then((res) => {
         setTutors(res.data);
         setLoader(false);
-        console.log(res);
+        setCount(sum);
       });
     }
   }, [user?.email, texts]);
@@ -49,8 +54,8 @@ const FindTutorPage = () => {
               name="search"
               onClick={() => setTexts("")}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search..."
-              className="w-32 py-2 pl-10 text-sm rounded-md sm:w-auto focus:outline-none dark:bg-gray-100 dark:text-gray-800 focus:dark:bg-gray-50 focus:dark:border-amber-600"
+              placeholder={`${texts ? texts : "Search..."}`}
+              className="w-32 py-2 pl-10 text-sm rounded-md border sm:w-auto focus:outline-none dark:bg-gray-100 dark:text-gray-800 focus:dark:bg-gray-50 focus:dark:border-amber-600"
             />
           </div>
           <button onClick={() => setTexts("")} className="btn btn-sm">
