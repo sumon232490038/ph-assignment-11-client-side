@@ -67,15 +67,22 @@ const FindTutorPage = () => {
                 : tutor.language.toLowerCase().includes(search.toLowerCase());
             })
             .map((tutor) => (
-              <div key={tutor._id} className="grid grid-cols-3 border gap-3">
+              <div
+                key={tutor._id}
+                className="grid grid-cols-3 border gap-3 rounded-lg p-2 hover:bg-slate-300 dark:hover:bg-slate-700"
+              >
                 <div>
-                  <img className="h-48 w-full" src={tutor.photoUrl} alt="" />
+                  <img
+                    className="h-48 w-full rounded-lg"
+                    src={tutor.photoUrl}
+                    alt=""
+                  />
                 </div>
-                <div className="text-xl flex flex-col justify-center ">
+                <div className=" flex flex-col justify-center ">
                   <h1 className="flex justify-center items-center gap-1">
                     Tutorail Name: {tutor.tutorialName}
                   </h1>
-                  <h1 className="flex items-center gap-1">
+                  <h1 className="flex items-center gap-1 capitalize">
                     <img
                       src="https://i.ibb.co.com/6NMtzHZ/icons8-language-94.png"
                       className="h-6"

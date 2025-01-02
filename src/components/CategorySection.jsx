@@ -8,7 +8,7 @@ const CategorySection = () => {
   return (
     <div className="grid grid-cols-1 mx-auto gap-4 md:grid-cols-2 lg:grid-cols-3 p-2">
       <Link onClick={() => setTexts("English")} to={`findtutor/`}>
-        <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@ const CategorySection = () => {
       </Link>
       <Link onClick={() => setTexts("Spanish")} to="findtutor">
         {" "}
-        <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +193,7 @@ const CategorySection = () => {
         </div>
       </Link>
       <Link onClick={() => setTexts("French")} to="findtutor">
-        <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -263,7 +263,7 @@ const CategorySection = () => {
         </div>
       </Link>
       <Link onClick={() => setTexts("German")} to="findtutor">
-        <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -430,7 +430,7 @@ const CategorySection = () => {
       </Link>
       <Link onClick={() => setTexts("Italian")} to="findtutor">
         {" "}
-        <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -540,7 +540,7 @@ const CategorySection = () => {
         </div>
       </Link>
       <Link onClick={() => setTexts("Chinese")} to="findtutor">
-        <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -649,7 +649,7 @@ const CategorySection = () => {
         </div>
       </Link>
       <Link onClick={() => setTexts("Arabic")} to="findtutor">
-        <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -755,7 +755,7 @@ const CategorySection = () => {
       </Link>
       <Link onClick={() => setTexts("Japanese")} to="findtutor">
         {" "}
-        <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -834,7 +834,7 @@ const CategorySection = () => {
         </div>
       </Link>
       <Link onClick={() => setTexts("Portuguese")} to="findtutor">
-        <div className="flex items-center justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
+        <div className="flex items-center hover:bg-slate-300 dark:hover:bg-slate-700 justify-between border-2 border-black dark:border-white dark:text-white p-8 md:p-5 lg:p-8">
           <div className="flex gap-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"

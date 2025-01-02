@@ -19,7 +19,7 @@ const myTutorialsPage = () => {
           setLoader(false);
         }
       });
-  }, [user.email]);
+  }, [user.email, loader]);
   const handleDelete = (id) => {
     console.log(id);
     axios
@@ -29,6 +29,7 @@ const myTutorialsPage = () => {
         if (res.data.deletedCount) {
           const remaning = tutorials.filter((tutorial) => tutorial._id !== id);
           setToturials(remaning);
+          setLoader(false);
           Swal.fire("Youer Tutorial Delete Successfull");
         }
       });

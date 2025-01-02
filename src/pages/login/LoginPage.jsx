@@ -33,7 +33,7 @@ const LoginPage = () => {
           },
           Navigate(backPrev)
         );
-        setLoader(true);
+        setLoader(false);
       })
       .catch((error) => {
         {
@@ -57,7 +57,7 @@ const LoginPage = () => {
           icon: "success",
         });
         Navigate(backPrev);
-        setLoader(true);
+        setLoader(false);
       })
       .catch((error) => {
         Swal.fire({
