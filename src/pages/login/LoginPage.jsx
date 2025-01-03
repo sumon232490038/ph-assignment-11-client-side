@@ -6,8 +6,7 @@ import axios from "axios";
 const LoginPage = () => {
   const {
     userLogin,
-    setEfectToggle,
-    effectToggle,
+
     signInAndsignUpByGoogle,
     setLoader,
     user,
@@ -16,28 +15,29 @@ const LoginPage = () => {
   const location = useLocation();
   const backPrev = location?.state || "/";
 
-  const tokenData = { email: user?.email };
   const handleLoginFrom = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
     const formData = Object.fromEntries(form.entries());
-    const userInfoa = {
-      displayName: formData.name,
-      photoURL: formData.photoUrl,
-    };
-    console.log(userInfoa);
     userLogin(formData.email, formData.password)
       .then(() => {
-        setEfectToggle(!effectToggle);
+        axios
+          .post(
+            "http://localhost:5000/jwt",
+            { email: formData.email },
+            { withCredentials: true }
+          )
+          .then((res) => console.log(res.data));
+
         Swal.fire(
           {
-            title: "Good job!",
-            text: "Your Login Successfull!",
+            title: "Success!",
+            text: "Your Login Successfull!!!",
             icon: "success",
           },
-          Navigate(backPrev)
+          // Navigate(backPrev),
+          setLoader(false)
         );
-        setLoader(false);
       })
       .catch((error) => {
         {
@@ -54,17 +54,24 @@ const LoginPage = () => {
     e.preventDefault();
     signInAndsignUpByGoogle()
       .then((res) => {
-        setEfectToggle(!effectToggle);
-        console.log(res.user);
+        const tokenData = { email: res.user.email };
+        axios
+          .post("http://localhost:5000/jwt", tokenData, {
+            withCredentials: true,
+          })
+          .then((res) => console.log(res.data));
 
-        Swal.fire({
-          title: "Good job!",
-          text: "Your Login Successfull By Google!",
-          icon: "success",
-        });
-        Navigate(backPrev);
-        setLoader(false);
-      }, axios.post("http://localhost:5000/jwt", tokenData, { withCredentials: true }))
+        Swal.fire(
+          {
+            title: "Good job!",
+            text: "Your Login Successfull By Google!",
+            icon: "success",
+          },
+          // Navigate(backPrev),
+          setLoader(false)
+        );
+      })
+
       .catch((error) => {
         Swal.fire({
           icon: "error",

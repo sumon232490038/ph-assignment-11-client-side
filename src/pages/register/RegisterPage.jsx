@@ -8,8 +8,6 @@ const RegisterPage = () => {
   const {
     resiterUser,
     updateUserProfile,
-    setEfectToggle,
-    effectToggle,
     signInAndsignUpByGoogle,
     loader,
     setLoader,
@@ -32,7 +30,6 @@ const RegisterPage = () => {
           .then(() => {});
         updateUserProfile(userInfoa)
           .then(() => {
-            setEfectToggle(!effectToggle);
             Swal.fire(
               {
                 title: "Good job!",
@@ -64,7 +61,6 @@ const RegisterPage = () => {
     e.preventDefault();
     signInAndsignUpByGoogle()
       .then((res) => {
-        setEfectToggle(!effectToggle);
         Swal.fire(
           {
             title: "Good job!",

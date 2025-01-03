@@ -16,7 +16,7 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState([]);
   const [texts, setTexts] = useState("");
-  const [effectToggle, setEfectToggle] = useState(false);
+
   const [loader, setLoader] = useState(true);
   const resiterUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -54,8 +54,6 @@ const AuthProvider = ({ children }) => {
     updateUserProfile,
     user,
     setUser,
-    effectToggle,
-    setEfectToggle,
     userLogOut,
     userLogin,
     signInAndsignUpByGoogle,
