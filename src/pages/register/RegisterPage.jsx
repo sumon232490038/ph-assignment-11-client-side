@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import userAuth from "../../hooks/userAuth";
 import Swal from "sweetalert2";
+import axios from "axios";
 
 const RegisterPage = () => {
+  const Navigate = useNavigate();
   const {
     resiterUser,
     updateUserProfile,
@@ -22,15 +24,23 @@ const RegisterPage = () => {
     };
     console.log(userInfoa);
     resiterUser(formData.email, formData.password)
-      .then(() => {
+      .then((res) => {
+        axios
+          .post(
+            `http://localhost:5000/tutorXpress/users?email=${res.user.email}`
+          )
+          .then(() => {});
         updateUserProfile(userInfoa)
           .then(() => {
             setEfectToggle(!effectToggle);
-            Swal.fire({
-              title: "Good job!",
-              text: "Your Registration Successfull!",
-              icon: "success",
-            });
+            Swal.fire(
+              {
+                title: "Good job!",
+                text: "Your Registration Successfull!",
+                icon: "success",
+              },
+              Navigate("/")
+            );
             setLoader(true);
           })
           .catch((error) => {
@@ -53,13 +63,22 @@ const RegisterPage = () => {
   const handleRegisterByGoogle = (e) => {
     e.preventDefault();
     signInAndsignUpByGoogle()
-      .then(() => {
+      .then((res) => {
         setEfectToggle(!effectToggle);
-        Swal.fire({
-          title: "Good job!",
-          text: "Your Registration Successfull By Google!",
-          icon: "success",
-        });
+        Swal.fire(
+          {
+            title: "Good job!",
+            text: "Your Registration Successfull By Google!",
+            icon: "success",
+          },
+          axios
+            .post(
+              `http://localhost:5000/tutorXpress/users?email=${res.user.email}`
+            )
+            .then(() => {}),
+          Navigate("/")
+        );
+
         setLoader(true);
       })
       .catch((error) => {
@@ -70,6 +89,7 @@ const RegisterPage = () => {
         });
       });
   };
+
   return (
     <div className="mx-auto p-5 my-10">
       <div className="w-full mx-auto max-w-md p-4 rounded-md shadow sm:p-8 bg-black dark:bg-gray-50 text-white dark:text-black">

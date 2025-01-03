@@ -1,18 +1,22 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import userAuth from "../../hooks/userAuth";
 import Swal from "sweetalert2";
+import axios from "axios";
+
 const LoginPage = () => {
   const {
     userLogin,
     setEfectToggle,
     effectToggle,
     signInAndsignUpByGoogle,
-    loader,
     setLoader,
+    user,
   } = userAuth();
   const Navigate = useNavigate();
   const location = useLocation();
   const backPrev = location?.state || "/";
+
+  const tokenData = { email: user?.email };
   const handleLoginFrom = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -49,8 +53,10 @@ const LoginPage = () => {
   const handleSignInByGoogle = (e) => {
     e.preventDefault();
     signInAndsignUpByGoogle()
-      .then(() => {
+      .then((res) => {
         setEfectToggle(!effectToggle);
+        console.log(res.user);
+
         Swal.fire({
           title: "Good job!",
           text: "Your Login Successfull By Google!",
@@ -58,7 +64,7 @@ const LoginPage = () => {
         });
         Navigate(backPrev);
         setLoader(false);
-      })
+      }, axios.post("http://localhost:5000/jwt", tokenData, { withCredentials: true }))
       .catch((error) => {
         Swal.fire({
           icon: "error",

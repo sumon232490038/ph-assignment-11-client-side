@@ -7,16 +7,10 @@ import Lottie from "lottie-react";
 import lottee from "../../../public/reactLotte/lotte2.json";
 
 const FindTutorPage = () => {
-  const { user, setLoader, texts, setTexts, count, setCount } = userAuth();
+  const { user, setLoader, texts, setTexts } = userAuth();
   const [search, setSearch] = useState("");
   const [tutors, setTutors] = useState([]);
-
-  let sum = 0;
-
-  const reviewCount = tutors.map(
-    (tutor) => (sum = sum + parseInt(tutor.review))
-  );
-  console.log(count);
+  console.log(tutors);
 
   useEffect(() => {
     if (texts) {
@@ -24,14 +18,12 @@ const FindTutorPage = () => {
         .get(`http://localhost:5000/find-tutors/category?language=${texts}`)
         .then((res) => {
           setTutors(res.data);
-          console.log(res);
           setLoader(false);
         });
     } else {
       axios.get(`http://localhost:5000/find-tutors`).then((res) => {
         setTutors(res.data);
         setLoader(false);
-        setCount(sum);
       });
     }
   }, [user?.email, texts]);
