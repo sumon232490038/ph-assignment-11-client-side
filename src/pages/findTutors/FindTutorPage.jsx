@@ -10,7 +10,6 @@ const FindTutorPage = () => {
   const { user, setLoader, texts, setTexts } = userAuth();
   const [search, setSearch] = useState("");
   const [tutors, setTutors] = useState([]);
-  console.log(tutors);
 
   useEffect(() => {
     if (texts) {

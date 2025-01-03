@@ -7,13 +7,13 @@ import Swal from "sweetalert2";
 const myTutorialsPage = () => {
   const [tutorials, setToturials] = useState([]);
   const { user, loader, setLoader } = userAuth();
-  // console.log(user.email);
-  console.log(loader);
+
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/myTutorials?email=${user?.email}`, {})
+      .get(`http://localhost:5000/myTutorials?email=${user?.email}`, {
+        withCredentials: true,
+      })
       .then((res) => {
-        // console.log(res.data);
         if (res.data) {
           setToturials(res.data);
           setLoader(false);
@@ -21,11 +21,9 @@ const myTutorialsPage = () => {
       });
   }, [user.email, loader]);
   const handleDelete = (id) => {
-    console.log(id);
     axios
       .delete(`http://localhost:5000/myTutorials/delete/${id}`)
       .then((res) => {
-        console.log(res.data);
         if (res.data.deletedCount) {
           const remaning = tutorials.filter((tutorial) => tutorial._id !== id);
           setToturials(remaning);

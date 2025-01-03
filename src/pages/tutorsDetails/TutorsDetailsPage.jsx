@@ -9,7 +9,6 @@ const TutorsDetailsPage = () => {
   const Navigate = useNavigate();
 
   const handleBookedTutor = (id) => {
-    console.log(id);
     const bookedInfo = {
       tutorialName: tutor.tutorialName,
       tutorId: tutor._id,
@@ -23,7 +22,9 @@ const TutorsDetailsPage = () => {
     };
 
     axios
-      .post(`http://localhost:5000/myBookedTutors`, bookedInfo)
+      .post(`http://localhost:5000/myBookedTutors`, bookedInfo, {
+        withCredentials: true,
+      })
       .then((res) => {
         if (res) {
           Swal.fire("Tutor booking successfull!");

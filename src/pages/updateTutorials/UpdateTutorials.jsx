@@ -22,11 +22,12 @@ const UpdateTutorials = () => {
     const { language, ...newTutorData } = tutorData;
     const newLanguage = language.toLowerCase();
     newTutorData.language = newLanguage;
-    console.log(newTutorData);
+
     axios
-      .post(`http://localhost:5000/updateTutorial/${id}`, newTutorData)
+      .post(`http://localhost:5000/updateTutorial/${id}`, newTutorData, {
+        withCredentials: true,
+      })
       .then((res) => {
-        console.log(res.data.modifiedCount);
         if (res.data.modifiedCount) {
           Swal.fire(
             {

@@ -14,12 +14,12 @@ const AddTutorialsPage = () => {
     const newLanguage = language.toLowerCase();
     newTutorData.language = newLanguage;
     newTutorData.price = newPrice;
-    console.log(newTutorData);
 
     axios
-      .post("http://localhost:5000/addTutorials", newTutorData)
+      .post("http://localhost:5000/addTutorials", newTutorData, {
+        withCredentials: true,
+      })
       .then((data) => {
-        console.log(data);
         if (data) {
           Swal.fire({
             position: "top-end",

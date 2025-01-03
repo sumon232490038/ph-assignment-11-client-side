@@ -11,7 +11,9 @@ const BookedTutorsPage = () => {
   useEffect(
     () => {
       axios
-        .get(`http://localhost:5000/myBookedTutors/page?email=${user.email}`)
+        .get(`http://localhost:5000/myBookedTutors/page?email=${user.email}`, {
+          withCredentials: true,
+        })
         .then((res) => {
           setTutors(res.data);
         });
@@ -21,10 +23,7 @@ const BookedTutorsPage = () => {
   );
 
   const handleReview = (id) => {
-    // console.log(id);
-
     axios.post(`http://localhost:5000/tutor/review/${id}`).then((res) => {
-      console.log(res);
       if (res.data.modifiedCount) {
         Swal.fire(
           {
@@ -45,7 +44,6 @@ const BookedTutorsPage = () => {
     axios
       .delete(`http://localhost:5000/bookedTutor/delete/${id}`)
       .then((res) => {
-        console.log(res.data);
         if (res.data.deletedCount) {
           const remaning = tutors.filter((tutorial) => tutorial._id !== id);
           setTutors(remaning);

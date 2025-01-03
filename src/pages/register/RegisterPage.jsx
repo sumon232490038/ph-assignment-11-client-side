@@ -20,7 +20,7 @@ const RegisterPage = () => {
       displayName: formData.name,
       photoURL: formData.photoUrl,
     };
-    console.log(userInfoa);
+
     resiterUser(formData.email, formData.password)
       .then((res) => {
         axios

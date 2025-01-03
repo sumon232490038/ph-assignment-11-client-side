@@ -27,7 +27,7 @@ const LoginPage = () => {
             { email: formData.email },
             { withCredentials: true }
           )
-          .then((res) => console.log(res.data));
+          .then(() => {});
 
         Swal.fire(
           {
